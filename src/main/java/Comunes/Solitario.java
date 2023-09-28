@@ -1,3 +1,7 @@
+package Comunes;
+
+import Comunes.Carta.Carta;
+
 public abstract class Solitario {
 
     ///Deja el juego listo para empezar a ser jugado a partir de una semilla random
