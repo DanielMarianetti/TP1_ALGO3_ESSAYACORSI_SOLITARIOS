@@ -4,13 +4,16 @@ import Movimientos.Movimiento;
 
 public class Carta {
 
-    private Numero numero;
+    private CartaState state;
 
-    private Palo palo;
+    private final Numero numero;
+
+    private final Palo palo;
 
     public Carta(Numero numero, Palo palo){
         this.numero = numero;
         this.palo = palo;
+        this.state = new CartaBocaAbajoState(this);
     }
 
     public boolean equals(Carta otraCarta){
@@ -18,16 +21,29 @@ public class Carta {
     }
 
     public boolean equals(Palo otroPalo, Numero otroNumero){
-        boolean esIgual = true;
-        if(this.palo != otroPalo)
-            esIgual = false;
+        boolean esIgual = this.palo == otroPalo;
         if(this.numero != otroNumero)
             esIgual = false;
         return esIgual;
     }
 
+    public boolean colocarSobre(Carta otraCarta, Movimiento movimiento){
+        return this.state.colocarSobre(otraCarta, movimiento);
+    }
 
-    public boolean colocarSobre(Carta carta, Movimiento movimiento){
-        return true;
+    public void ultimaPilon() {
+        this.state.ultimaPilon();
+    }
+
+    public void cambiarState(CartaState newState) {
+        this.state = newState;
+    }
+
+    public void traerAlMazo() {
+        this.state.traerAlMazo();
+    }
+
+    public CartaState getState() {
+        return state;
     }
 }
