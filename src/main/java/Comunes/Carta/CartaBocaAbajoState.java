@@ -1,7 +1,5 @@
 package Comunes.Carta;
 
-import Movimientos.Movimiento;
-
 public class CartaBocaAbajoState implements CartaState {
 
     Carta carta;
@@ -11,8 +9,8 @@ public class CartaBocaAbajoState implements CartaState {
     }
 
     @Override
-    public boolean colocarSobre(Carta otraCarta, Movimiento movimiento) {
-        return false;
+    public void pedirDelMazo() {
+        this.carta.cambiarState(new CartaBocaArribaState(this.carta));
     }
 
     @Override
@@ -22,6 +20,5 @@ public class CartaBocaAbajoState implements CartaState {
 
     @Override
     public void traerAlMazo() {
-        return;
     }
 }

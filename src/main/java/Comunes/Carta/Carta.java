@@ -27,10 +27,6 @@ public class Carta {
         return esIgual;
     }
 
-    public boolean colocarSobre(Carta otraCarta, Movimiento movimiento){
-        return this.state.colocarSobre(otraCarta, movimiento);
-    }
-
     public void ultimaPilon() {
         this.state.ultimaPilon();
     }
@@ -43,7 +39,19 @@ public class Carta {
         this.state.traerAlMazo();
     }
 
+    public boolean cheaquearSiguiente(Carta carta) {
+        return carta.getNumero().ordinal() == this.numero.ordinal();
+    }
+
     public CartaState getState() {
         return state;
+    }
+
+    public Numero getNumero() {
+        return numero;
+    }
+
+    public Palo getPalo() {
+        return palo;
     }
 }

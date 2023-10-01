@@ -11,8 +11,7 @@ public class CartaBocaArribaState implements CartaState {
     }
 
     @Override
-    public boolean colocarSobre(Carta otraCarta, Movimiento movimiento) {
-        return true;
+    public void pedirDelMazo() {
     }
 
     @Override

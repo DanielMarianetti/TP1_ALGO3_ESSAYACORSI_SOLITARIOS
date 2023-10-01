@@ -4,7 +4,7 @@ import Movimientos.Movimiento;
 
 public interface CartaState {
 
-    boolean colocarSobre(Carta otraCarta, Movimiento movimiento);
+    void pedirDelMazo();
 
     void ultimaPilon();
 

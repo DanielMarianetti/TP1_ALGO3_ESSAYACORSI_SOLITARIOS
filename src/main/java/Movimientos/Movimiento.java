@@ -1,8 +1,10 @@
 package Movimientos;
 
-import Comunes.Pilon;
+import Comunes.Carta.Carta;
+import Comunes.Pilon.Pilon;
 
 public interface Movimiento {
 
-    boolean mover(Pilon pilonObjetivo, Pilon pilonDestino);
+    public void moverAPilon(Carta cartaOrigen, Pilon pilonDestino);
+
 }
