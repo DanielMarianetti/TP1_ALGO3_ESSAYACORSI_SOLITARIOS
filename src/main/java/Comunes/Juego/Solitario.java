@@ -1,12 +1,8 @@
 package Comunes.Juego;
 
-import Comunes.Pilon.Columna;
-import Comunes.Pilon.Columna;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Solitario {
