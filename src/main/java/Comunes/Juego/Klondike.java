@@ -2,6 +2,7 @@ package Comunes.Juego;
 
 import Comunes.Carta.Carta;
 import Comunes.Pilon.Columna;
+import Comunes.Pilon.Columna;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.*;
@@ -42,8 +43,10 @@ public class Klondike extends Solitario {
                 columna.recibirCarta(this.mazo.sacarCarta(0)); //TODO EL CERO ACA NO VA
             }
             contador++;
+            contador++;
             columna.getUltimaCarta().ultimaPilon();
         }
+        this.setJuegoComenzado(true);
         this.setJuegoComenzado(true);
     }
 
@@ -53,8 +56,10 @@ public class Klondike extends Solitario {
     }
 
 
+
     public void moverMazoAWaste() {
-        this.mazo.mover(this.mazo.cantidadCartas()-1, this.waste);
+        Carta carta = this.mazo.sacarCarta();
+        this.movimiento.moverAPilon(carta, this.waste);
     }
 
     public void rearmarMazo(Carta carta, Pilon pilonDestino) {
@@ -101,11 +106,5 @@ public class Klondike extends Solitario {
         foundation.mover(altura, pilonOrigen);
     }
 
-    public void MoverFoundationAFoundation(int foundationOrigen, int altura, int foundationDestino) {
-        Pilon foundationOrg = this.foundation.get(foundationOrigen);
-        Pilon foundationDest = this.foundation.get(foundationDestino);
-        Movimiento movimiento = new MismoPaloDescendente();
-        foundationOrg.setMovimiento(movimiento);
-        foundationOrg.mover(altura, foundationDest);
-    }
 }
+

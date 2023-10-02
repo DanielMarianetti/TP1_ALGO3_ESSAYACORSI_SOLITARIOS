@@ -1,6 +1,7 @@
 package Comunes.Juego;
 
 import Comunes.Pilon.Columna;
+import Comunes.Pilon.Columna;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.*;
@@ -60,16 +61,5 @@ public abstract class Solitario {
 
     //El objetivo a completar depende del tipo de solitario
     public abstract boolean juegoGanado();
-
-    // ---------------------------Movimientos----------------------------------
-
-    //Mueve cartas a lugares sin reglas del solitario
-    public  void moverLibre(int columna) {
-        int altura = this.mazo.cantidadCartas()-1;                        // chequear si esto de la altura esta bien
-        if (!this.juegoComenzado) {
-            this.mazo.mover(altura, this.tableau.get(columna));
-        }
-    }
-
 
 }
