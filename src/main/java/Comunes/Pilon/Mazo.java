@@ -2,7 +2,7 @@ package Comunes.Pilon;
 
 import Comunes.Carta.Carta;
 import Comunes.Carta.Numero;
-import Comunes.Carta.Palo;
+import Comunes.Palo.Palo;
 
 import java.util.Collections;
 import java.util.Stack;
@@ -13,7 +13,7 @@ public class Mazo extends Pilon{
     // crea el mazo ordenado o desordenado
     public Mazo(boolean ordenado) {
         this.mazo = new Stack<>();
-        for (Palo palo : Palo.values()) {
+        for (Palo palo : Palo.obtenerPalos()) {
             for (Numero numero : Numero.values()) {
                 Carta carta = new Carta(numero, palo);
                 this.mazo.push(carta);

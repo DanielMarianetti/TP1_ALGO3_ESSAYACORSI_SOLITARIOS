@@ -4,6 +4,10 @@ public class CartaBocaAbajoState implements CartaState {
 
     Carta carta;
 
+    public boolean tomar(){
+        return false;
+    }
+
     public CartaBocaAbajoState(Carta carta) {
         this.carta = carta;
     }

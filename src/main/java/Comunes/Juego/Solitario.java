@@ -4,7 +4,6 @@ import Comunes.Carta.Carta;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.Movimiento;
-import Movimientos.MovimientoKlondike;
 import Movimientos.MovimientoLibre;
 
 import java.util.ArrayList;
@@ -38,7 +37,7 @@ public abstract class Solitario {
     }
 
     //Mueve cartas a lugares sin reglas del solitario
-    public  void moverLibre(int columna) {
+    public void moverLibre(int columna) {
         if (!this.juegoComenzado) {
             Carta carta = this.mazo.sacarCarta();
             this.movimientolibre.moverAPilon(carta, this.tableau.get(columna));

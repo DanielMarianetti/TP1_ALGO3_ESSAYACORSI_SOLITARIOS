@@ -1,14 +1,20 @@
 package Objetivos;
 
+import Comunes.Carta.Carta;
+import Comunes.Carta.Numero;
 import Comunes.Pilon.Pilon;
+import Movimientos.MismoPaloDescendente;
+import Movimientos.Movimiento;
 
 import java.util.List;
 
 public class PilonConMismoPalo implements Objetivo {
 
     @Override
-    public boolean cumplido(Pilon pilon){
-        return true;
+    public boolean cumplido(Pilon pilon) {
+        Movimiento movimientoChequeo = new MismoPaloDescendente();
+        int PILON_MISMO_PALO = 12;
+        return pilon.cumpleCon(movimientoChequeo, PILON_MISMO_PALO);
     }
 
     @Override
