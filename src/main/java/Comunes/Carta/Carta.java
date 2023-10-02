@@ -33,28 +33,12 @@ public class Carta {
         return esIgual;
     }
 
-    public boolean tomar(){
-        return this.state.tomar();
-    }
-
-    public Carta obtenerSiguiente(Carta carta){
-        return siguiente;
-    }
-
-    public void setSiguiente(Carta carta){
-        this.siguiente = carta;
-    }
-
-    public boolean mismoNumero(Numero otroNumero) {
-        return this.numero == otroNumero;
+    public void cambiarState(CartaState newState) {
+        this.state = newState;
     }
 
     public void ultimaPilon() {
         this.state.ultimaPilon();
-    }
-
-    public void cambiarState(CartaState newState) {
-        this.state = newState;
     }
 
     public void traerAlMazo() {
@@ -64,6 +48,8 @@ public class Carta {
     public boolean esSiguiente(Carta cartaChequear, Movimiento movimiento) {
         return movimiento.esSiguiente(this.palo, this.numero, cartaChequear);
     }
+    public void pedirAlMazo() {this.state.traerAlMazo(); }
+
 
     public CartaState getState() {
         return state;

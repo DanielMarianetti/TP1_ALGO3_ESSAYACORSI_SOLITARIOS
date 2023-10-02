@@ -1,6 +1,7 @@
 package Comunes.Juego;
 
 import Comunes.Carta.Carta;
+import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.Movimiento;
 import Movimientos.PaloIntercaladoDescendente;
@@ -20,7 +21,7 @@ public class Klondike extends Solitario {
         super();
         Movimiento movimiento = new PaloIntercaladoDescendente();
         this.waste = new Pilon();
-        this.mazo = new Pilon();
+        this.mazo = new Mazo();
     }
 
     @Override
@@ -40,11 +41,23 @@ public class Klondike extends Solitario {
         return false;
     }
 
-    public void mover(int numColumna, int indice, int columnaDestino) {
-        Pilon columnaOrigen = this.tableau.get(numColumna);
-        Carta cartaOrigen = columnaOrigen.getCarta(indice);
-        Pilon columnaDest = this.tableau.get(columnaDestino);
-        this.movimiento.moverAPilon(cartaOrigen, columnaDest);
+    public void moverMazoAWaste() {
+        Carta carta = this.mazo.sacarCarta();
+        this.movimiento.moverAPilon(carta, this.waste);
     }
 
+    public void rearmarMazo(Carta carta, Pilon pilonDestino) {
+
+    }
+
+    public void moverWasteAPilon() {
+    }
+
+    public void moverPilonAPilon() {
+
+    }
+
+    public void moverAFoundation() {
+
+    }
 }
