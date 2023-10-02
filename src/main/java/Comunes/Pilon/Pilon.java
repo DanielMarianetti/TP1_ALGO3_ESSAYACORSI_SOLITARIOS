@@ -26,13 +26,14 @@ public abstract class Pilon {
 
     public abstract boolean isPilonVacio();
 
+    public abstract int getLength();
+
     public void mover(int altura, Pilon pilonDestino){
         this.movimiento.mover(altura,this, pilonDestino);
     }
 
     public abstract void recibirCarta(Carta carta);
 
-    public abstract Carta sacarCarta();
-
+    public abstract Carta sacarCarta(int i);
 
 }

@@ -31,6 +31,11 @@ public class Columna extends Pilon {
     }
 
     @Override
+    public int getLength() {
+        return this.columna.size();
+    }
+
+    @Override
     public boolean isPilonVacio() {
         return this.columna.isEmpty();
     }
@@ -41,8 +46,8 @@ public class Columna extends Pilon {
     }
 
     @Override
-    public Carta sacarCarta() {
-        return this.columna.remove(this.columna.size()-1);
+    public Carta sacarCarta(int i) {
+        return this.columna.remove(i);
     }
 
 }

@@ -50,12 +50,17 @@ public class Mazo extends Pilon{
     }
 
     @Override
+    public int getLength() {
+        return this.mazo.size();
+    }
+
+    @Override
     public void recibirCarta(Carta carta) {
         this.mazo.push(carta);
     }
 
     @Override
-    public Carta sacarCarta() {
+    public Carta sacarCarta(int i) {
         return this.mazo.pop();
     }
 
