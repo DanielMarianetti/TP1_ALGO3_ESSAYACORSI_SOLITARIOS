@@ -6,6 +6,9 @@ import Comunes.Carta.Palo;
 import Comunes.Pilon.Pilon;
 
 public class DifetenteColor implements Movimiento {
+
+    //tambien cambiar estado de la ultima cargta a ultima del pilon
+
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {
         boolean ordenAscendente = false;

@@ -1,7 +1,9 @@
 package Comunes.Juego;
 
 import Comunes.Carta.Carta;
+import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
+import Movimientos.Movimiento;
 
 public class Klondike extends Solitario {
 
@@ -9,7 +11,9 @@ public class Klondike extends Solitario {
 
     public Klondike() {
         super();
-        this.waste = new Pilon();
+        Movimiento movimiento;
+
+        this.waste = new Mazo();
     }
 
     @Override

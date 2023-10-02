@@ -25,6 +25,11 @@ public class Mazo extends Pilon{
         }
     }
 
+    public Mazo(Movimiento movimiento) {
+        super(movimiento);
+        this.mazo = new Stack<>();
+    }
+
     private void mezclar(Stack<Carta> cartas) {
         Collections.shuffle(cartas);
     }

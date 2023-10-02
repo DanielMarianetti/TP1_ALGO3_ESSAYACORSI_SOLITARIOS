@@ -13,6 +13,8 @@ public class MismoPalo implements Movimiento {
         boolean mismoPalo = false;
         // talvez habria que chequear que la altura sea la de la ultima carta del pilon creo
 
+        //tambien cambiar estado de la ultima cargta a ultima del pilon
+
 
         Carta cartaOrigen = pilonOrigen.getCarta(altura);
         Carta cartaDestino = pilonDestino.getUltimaCarta();
