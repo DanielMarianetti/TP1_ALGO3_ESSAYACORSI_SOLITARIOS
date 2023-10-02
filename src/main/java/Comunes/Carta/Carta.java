@@ -27,21 +27,20 @@ public class Carta {
         return esIgual;
     }
 
-    public void ultimaPilon() {
-        this.state.ultimaPilon();
-    }
-
     public void cambiarState(CartaState newState) {
         this.state = newState;
+    }
+
+    public void ultimaPilon() {
+        this.state.ultimaPilon();
     }
 
     public void traerAlMazo() {
         this.state.traerAlMazo();
     }
 
-    public boolean cheaquearSiguiente(Carta carta) {
-        return carta.getNumero().ordinal() == this.numero.ordinal();
-    }
+    public void pedirAlMazo() {this.state.traerAlMazo(); }
+
 
     public CartaState getState() {
         return state;

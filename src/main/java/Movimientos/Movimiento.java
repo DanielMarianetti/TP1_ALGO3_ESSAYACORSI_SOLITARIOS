@@ -5,6 +5,6 @@ import Comunes.Pilon.Pilon;
 
 public interface Movimiento {
 
-    public void moverAPilon(Carta cartaOrigen, Pilon pilonDestino);
+    public void mover(int altura,Pilon pilonOrigen, Pilon pilonDestino);
 
 }

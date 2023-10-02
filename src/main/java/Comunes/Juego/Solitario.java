@@ -4,8 +4,6 @@ import Comunes.Carta.Carta;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.Movimiento;
-import Movimientos.MovimientoKlondike;
-import Movimientos.MovimientoLibre;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +17,7 @@ public abstract class Solitario {
 
     public Solitario() {
         this.tableau = new ArrayList<>();
-        this.movimientolibre = new MovimientoLibre();
+
     }
 
     ///Crea un juego random

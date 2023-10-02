@@ -6,43 +6,33 @@ import Movimientos.Movimiento;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pilon {
+public abstract class Pilon {
 
-    public List<Carta> lista;
     public Movimiento movimiento;
 
-    public Pilon() {
-        this.lista = new ArrayList<>();
+    public Pilon(Movimiento movimiento) {
+        this.movimiento = movimiento;
     }
 
-    public Carta getUltimaCarta() {
-        if (!this.lista.isEmpty()) {
-            return this.lista.get(this.lista.size()-1);
-        }
-        return null;
+    public void setMovimiento(Movimiento movimiento) {
+        this.movimiento = movimiento;
     }
 
-    public Carta getPrimeraCarta() {
-        if (!this.lista.isEmpty()) {
-            return this.lista.get(0);
-        }
-        return null;
+    public abstract Carta getUltimaCarta();
+
+    public abstract Carta getPrimeraCarta();
+
+    public abstract Carta getCarta(int i);
+
+    public abstract boolean isPilonVacio();
+
+    public void mover(int altura, Pilon pilonDestino){
+        this.movimiento.mover(altura,this, pilonDestino);
     }
 
-    public Carta getCarta(int i) {
-        return lista.get(i);
-    }
+    public abstract void recibirCarta(Carta carta);
 
-    public boolean isPilonVacio() {
-        return this.lista.isEmpty();
-    }
+    public abstract Carta sacarCarta();
 
-    public void recibirCarta(Carta carta) {
-        this.lista.add(carta);
-    }
-
-    public  Carta sacarCarta() {
-        return this.lista.remove(this.lista.size()-1);
-    }
 
 }
