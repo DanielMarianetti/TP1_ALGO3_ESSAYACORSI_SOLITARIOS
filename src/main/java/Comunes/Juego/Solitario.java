@@ -1,11 +1,9 @@
 package Comunes.Juego;
 
-import Comunes.Carta.Carta;
+import Comunes.Pilon.Columna;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
-import Movimientos.Libre;
-import Movimientos.Movimiento;
-import Movimientos.MovimientoLibre;
+import Movimientos.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,15 +12,27 @@ public abstract class Solitario {
 
     public List<Pilon> tableau;
     public Pilon mazo;
+    public List<Pilon> foundation;
     public boolean juegoComenzado = false;
 
-    public Solitario() {
+    /*public Solitario() {
         this.tableau = new ArrayList<>();
-    }
+        this.foundation = new ArrayList<>();
+        Movimiento movimiento = new DifetenteColor();
+        for (int i = 0; i < 7; i++) {
+            Pilon columna = new Columna(movimiento);
+            this.tableau.add(columna);
+        }
+        movimiento = new MismoPalo();
+        for (int i = 0; i < 4; i++) {
+            Pilon columna = new Columna(movimiento);
+            this.tableau.add(columna);
+        }
+    }*/
 
     ///Crea un juego random
     public void IniciarRandom() {
-        Movimiento movimiento = new Libre();
+        Movimiento movimiento = new MovimientoLibre();
         this.mazo = new Mazo(false, movimiento);
         this.setJuego();
         this.setJuegoComenzado(true);
@@ -33,16 +43,8 @@ public abstract class Solitario {
 
     ///Deja el juego listo para empezar a ser jugado a partir de un mazo ordenado
     public void iniciarOrdenado() {
-        Movimiento movimiento = new Libre();
+        Movimiento movimiento = new MovimientoLibre();
         this.mazo = new Mazo(true, movimiento);
-    }
-
-    //Mueve cartas a lugares sin reglas del solitario
-    public  void moverLibre(int columna) {
-        // int altura = this.mazo.()-1;                        // chequear si esto de la altura esta bien
-        if (!this.juegoComenzado) {
-            this.mazo.mover(0, this.tableau.get(columna));
-        }
     }
 
     //Cambia el estado a comenzado para que no se puedan hacer mas moviminetos libres
@@ -57,6 +59,17 @@ public abstract class Solitario {
     }
 
     //El objetivo a completar depende del tipo de solitario
-     public abstract boolean juegoGanado();
+    public abstract boolean juegoGanado();
+
+    // ---------------------------Movimientos----------------------------------
+
+    //Mueve cartas a lugares sin reglas del solitario
+    public  void moverLibre(int columna) {
+        int altura = this.mazo.cantidadCartas()-1;                        // chequear si esto de la altura esta bien
+        if (!this.juegoComenzado) {
+            this.mazo.mover(altura, this.tableau.get(columna));
+        }
+    }
+
 
 }

@@ -16,3 +16,13 @@ public abstract class Palo {
     public abstract ArrayList<Palo> obtenerMismoColor();
     public abstract ArrayList<Palo> obtenerOtroColor();
 }
+
+
+/*package Comunes.Palo;
+
+public enum Palo {
+    Pica,
+    Corazon,
+    Trebol,
+    Diamante,
+}*/

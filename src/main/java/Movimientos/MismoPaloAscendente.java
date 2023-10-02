@@ -6,7 +6,7 @@ import Comunes.Carta.Numero;
 import Comunes.Palo.Palo;
 import Comunes.Pilon.Pilon;
 
-public class MismoPaloDescendente implements Movimiento {
+public class MismoPaloAscendente implements Movimiento{
 
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {
@@ -20,11 +20,11 @@ public class MismoPaloDescendente implements Movimiento {
 
     @Override
     public boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear){
-        if(numero == Numero.As)
+        if(numero == Numero.K)
             return false;
 
         int ordinal = numero.ordinal();
-        Numero numeroSiguiente = Numero.values()[ordinal - 1];
+        Numero numeroSiguiente = Numero.values()[ordinal + 1];
 
         Carta siguiente = new Carta(numeroSiguiente, palo.obtenerMismoPalo());
         siguiente.cambiarState(new CartaBocaArribaState(siguiente));

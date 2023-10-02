@@ -31,7 +31,7 @@ public class Columna extends Pilon {
     }
 
     @Override
-    public int getLength() {
+    public int cantidadCartas() {
         return this.columna.size();
     }
 
@@ -50,4 +50,20 @@ public class Columna extends Pilon {
         return this.columna.remove(i);
     }
 
+    @Override
+    public boolean cumpleCon(Movimiento movimientoControl, int cantidadSecuencia) {
+        for (int i = 0; i <= columna.size() - cantidadSecuencia; i++) {
+            boolean secuenciaHallada = true;
+            for (int j = 0; j < cantidadSecuencia; j++) {
+                if (!columna.get(i + j).esSiguiente(columna.get(i + j + 1), movimientoControl)) {
+                    secuenciaHallada = false;
+                    break;
+                }
+            }
+            if (secuenciaHallada) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -7,8 +7,9 @@ import Comunes.Pilon.Pilon;
 
 public interface Movimiento {
 
-     void moverAPilon(Carta cartaOrigen, Pilon pilonDestino);
-     boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear);
-    public void mover(int altura,Pilon pilonOrigen, Pilon pilonDestino);
+     /*void moverAPilon(Carta cartaOrigen, Pilon pilonDestino);
+     boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear);*/
+    void mover(int altura,Pilon pilonOrigen, Pilon pilonDestino);
+    boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear);
 
 }

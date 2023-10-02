@@ -55,7 +55,7 @@ public class Mazo extends Pilon{
     }
 
     @Override
-    public int getLength() {
+    public int cantidadCartas() {
         return this.mazo.size();
     }
 
@@ -67,6 +67,11 @@ public class Mazo extends Pilon{
     @Override
     public Carta sacarCarta(int i) {
         return this.mazo.pop();
+    }
+
+    @Override
+    public boolean cumpleCon(Movimiento movimientoControl, int cantidadSecuencia) {
+        return false;
     }
 
 }

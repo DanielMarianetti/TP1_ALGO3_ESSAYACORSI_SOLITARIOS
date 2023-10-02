@@ -8,22 +8,18 @@ import Comunes.Pilon.Pilon;
 
 import java.util.ArrayList;
 
-public class PaloIntercaladoDescendente implements Movimiento{
+public class ColorIntercaladoDescendente implements Movimiento{
 
-    // mueve ultima carta del pilon a otro pilon si son de color diferente y estan ordenadas
     @Override
-    public void moverAPilon(Carta cartaOrigen, Pilon pilonDestino) {
+    public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {
+        Carta cartaOrigen = pilonOrigen.getCarta(altura);
+        Carta cartaDestino = pilonDestino.getUltimaCarta();
+
+        if(cartaDestino.esSiguiente(cartaOrigen, this))
+            pilonDestino.recibirCarta(pilonOrigen.sacarCarta(altura));
 
     }
 
-    //mueve todo un pilon de cartas a otro pilon si se cumplen las condiciones
-    public void moverAPilon(Pilon pilonOrigen, Pilon pilonDestino) {
-
-    }
-
-    public void moverAFoundation(Carta cartaOrigen, Pilon foundationDestino) {
-
-    }
     public boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear) {
         ArrayList<Carta> siguientes = new ArrayList<>();
 

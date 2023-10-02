@@ -45,9 +45,6 @@ public class Carta {
         this.state.traerAlMazo();
     }
 
-    public boolean esSiguiente(Carta cartaChequear, Movimiento movimiento) {
-        return movimiento.esSiguiente(this.palo, this.numero, cartaChequear);
-    }
     public void pedirAlMazo() {this.state.traerAlMazo(); }
 
 
@@ -61,5 +58,9 @@ public class Carta {
 
     public Palo getPalo() {
         return palo;
+    }
+
+    public boolean esSiguiente(Carta cartaChequear, Movimiento movimiento) {
+        return movimiento.esSiguiente(this.palo, this.numero, cartaChequear);
     }
 }
