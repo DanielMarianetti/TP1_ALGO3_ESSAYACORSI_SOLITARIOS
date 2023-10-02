@@ -55,8 +55,6 @@ public class Klondike extends Solitario {
         return objetivo.cumplido(this.foundation);
     }
 
-
-
     public void moverMazoAWaste() {
        // Carta carta = this.mazo.sacarCarta();
         this.mazo.mover(this.mazo.cantidadCartas()-1, this.waste);

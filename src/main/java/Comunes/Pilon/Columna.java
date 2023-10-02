@@ -15,6 +15,16 @@ public class Columna extends Pilon {
         this.columna = new ArrayList<>();
     }
 
+    public Columna(Movimiento movimiento, List<Carta> cartas) {
+        super(movimiento);
+        this.columna = cartas;
+    }
+
+    @Override
+    public void setCartas(List<Carta> cartas){
+        columna = cartas;
+    }
+
     @Override
     public Carta getUltimaCarta() {
         return this.columna.get(this.columna.size()-1);

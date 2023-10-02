@@ -6,6 +6,7 @@ import Comunes.Palo.Palo;
 import Movimientos.Movimiento;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 public class Mazo extends Pilon{
@@ -28,6 +29,16 @@ public class Mazo extends Pilon{
     public Mazo(Movimiento movimiento) {
         super(movimiento);
         this.mazo = new Stack<>();
+    }
+
+    public Mazo(Movimiento movimiento, List<Carta> cartas) {
+        super(movimiento);
+        this.mazo = (Stack<Carta>) cartas;
+    }
+
+    @Override
+    public void setCartas(List<Carta> cartas){
+        mazo = (Stack<Carta>) cartas;
     }
 
     private void mezclar(Stack<Carta> cartas) {

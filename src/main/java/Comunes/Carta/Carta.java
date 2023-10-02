@@ -47,7 +47,6 @@ public class Carta {
 
     public void pedirAlMazo() {this.state.traerAlMazo(); }
 
-
     public CartaState getState() {
         return state;
     }

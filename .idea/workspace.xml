@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f391ec7d-db32-49de-b711-9762ca43b433" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit3 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2WD1QPI39cfFJXSBOnPFzgOwq4e" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "git-widget-placeholder": "dev__tests",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Movimientos" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Comunes.Pilon" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MazoTest.testTomarAlgunasCartasHaceQueElMasoPierdaCartas">
+    <configuration name="ColumnaTest.testObtenerCartaEnNPosicionEsCorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Pilon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.ColumnaTest" />
+      <option name="METHOD_NAME" value="testObtenerCartaEnNPosicionEsCorrecta" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ColumnaTest.testObtenerLaPrimeraCartaEsCorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Pilon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.ColumnaTest" />
+      <option name="METHOD_NAME" value="testObtenerLaPrimeraCartaEsCorrecta" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ColumnaTest.testObtenerLaUltimaCartaEsCorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Pilon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.ColumnaTest" />
+      <option name="METHOD_NAME" value="testObtenerLaUltimaCartaEsCorrecta" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MazoTest.testTomarAlgunasCartasHaceQueElMasoPierdaCartas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Pilon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.MazoTest" />
+      <option name="METHOD_NAME" value="testTomarAlgunasCartasHaceQueElMasoPierdaCartas" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MazoTest.testTomarTodasLasCartasHaceQueElMasoQuedeVacio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Pilon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.MazoTest" />
+      <option name="METHOD_NAME" value="testTomarTodasLasCartasHaceQueElMasoQuedeVacio" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MazoTest.testTomarAlgunasCartasHaceQueElMasoPierdaCartas" />
+        <item itemvalue="JUnit.ColumnaTest.testObtenerCartaEnNPosicionEsCorrecta" />
+        <item itemvalue="JUnit.ColumnaTest.testObtenerLaPrimeraCartaEsCorrecta" />
+        <item itemvalue="JUnit.ColumnaTest.testObtenerLaUltimaCartaEsCorrecta" />
+        <item itemvalue="JUnit.MazoTest.testTomarTodasLasCartasHaceQueElMasoQuedeVacio" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f391ec7d-db32-49de-b711-9762ca43b433" name="Changes" comment="" />
+      <created>1696252321647</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696252321647</updated>
+    </task>
+    <servers />
+  </component>
+</project>
