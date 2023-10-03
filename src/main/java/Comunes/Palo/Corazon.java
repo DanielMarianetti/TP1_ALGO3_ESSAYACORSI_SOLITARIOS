@@ -3,6 +3,7 @@ package Comunes.Palo;
 import java.util.ArrayList;
 
 public class Corazon extends Palo {
+    private String nombre = "Corazon";
 
     public Palo obtenerMismoPalo(){
         return new Corazon();

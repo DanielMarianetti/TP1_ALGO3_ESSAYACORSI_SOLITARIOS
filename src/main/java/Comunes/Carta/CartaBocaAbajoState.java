@@ -25,4 +25,9 @@ public class CartaBocaAbajoState implements CartaState {
     @Override
     public void traerAlMazo() {
     }
+
+    @Override
+    public String mostrarEstado() {
+        return "Boca Abajo";
+    }
 }

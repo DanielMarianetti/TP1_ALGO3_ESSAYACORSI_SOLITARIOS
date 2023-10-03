@@ -16,7 +16,7 @@ public class Klondike extends Solitario {
 
     public Klondike() {
         super();
-        this.waste = new Mazo(new MovimientoLibre()); //Esto lo tengo que cambiar por mismo palo asc
+        this.waste = new Mazo(new MovimientoLibre());
         this.objetivo = new PilonEnteroMismoPaloAsc();
         Movimiento movimiento = new ColorIntercaladoDescendente();
         for (int i = 0; i < 7; i++) {
@@ -40,7 +40,6 @@ public class Klondike extends Solitario {
                 columna.recibirCartas(this.mazo.sacarPilon(this.mazo.cantidadCartas()-1));
             }
             contador++;
-            contador++;
             columna.getUltimaCarta().ultimaPilon();
         }
         this.setJuegoComenzado(true);
@@ -53,7 +52,6 @@ public class Klondike extends Solitario {
     }
 
     public void moverMazoAWaste() {
-       // Carta carta = this.mazo.sacarCarta();
         this.mazo.mover(this.mazo.cantidadCartas()-1, this.waste);
     }
 
