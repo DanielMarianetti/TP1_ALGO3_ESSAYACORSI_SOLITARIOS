@@ -19,4 +19,28 @@ public class Pica extends Palo {
         palos.add(new Corazon());
         return palos;
     }
+
+    public boolean igualPalo(Palo otroPalo) {
+        return otroPalo.esIgual(this);
+    }
+
+    @Override
+    public boolean esIgual(Diamante palo) {
+        return false;
+    }
+
+    @Override
+    public boolean esIgual(Corazon palo) {
+        return false;
+    }
+
+    @Override
+    public boolean esIgual(Pica palo) {
+        return true;
+    }
+
+    @Override
+    public boolean esIgual(Trebol palo) {
+        return false;
+    }
 }

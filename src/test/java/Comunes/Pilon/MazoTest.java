@@ -29,7 +29,7 @@ public class MazoTest extends TestCase {
         Mazo mazoOrdenado = new Mazo(true, new MovimientoLibre());
 
         for(int i = 0; i < CARTAS_TOTALES_MAZO; i++){
-            mazoOrdenado.sacarCarta(0);
+            mazoOrdenado.sacarPilon(0);
         }
 
         assert mazoOrdenado.isPilonVacio();
@@ -41,7 +41,7 @@ public class MazoTest extends TestCase {
         int cartasTomadas = 4;
 
         for(int i = 0; i < cartasTomadas; i++){
-            mazoOrdenado.sacarCarta(0);
+            mazoOrdenado.sacarPilon(0);
         }
 
         assertFalse(mazoOrdenado.isPilonVacio());

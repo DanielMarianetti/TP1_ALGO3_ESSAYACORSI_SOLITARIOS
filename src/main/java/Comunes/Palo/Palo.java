@@ -15,6 +15,11 @@ public abstract class Palo {
     public abstract Palo obtenerMismoPalo();
     public abstract ArrayList<Palo> obtenerMismoColor();
     public abstract ArrayList<Palo> obtenerOtroColor();
+    public abstract boolean igualPalo(Palo palo);
+    public abstract boolean esIgual(Diamante otroPalo);
+    public abstract boolean esIgual(Pica otroPalo);
+    public abstract boolean esIgual(Trebol otroPalo);
+    public abstract boolean esIgual(Corazon otroPalo);
 }
 
 

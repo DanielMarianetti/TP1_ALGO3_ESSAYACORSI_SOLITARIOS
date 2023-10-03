@@ -4,8 +4,6 @@ import Comunes.Carta.Carta;
 import Movimientos.Movimiento;
 import java.util.List;
 
-import java.util.List;
-
 public abstract class Pilon {
 
     public Movimiento movimiento;
@@ -19,6 +17,10 @@ public abstract class Pilon {
 
     public void setMovimiento(Movimiento movimiento) {
         this.movimiento = movimiento;
+    }
+
+    public Movimiento getMovimiento() {
+        return this.movimiento;
     }
 
     public abstract Carta getUltimaCarta();
@@ -35,7 +37,7 @@ public abstract class Pilon {
         this.movimiento.mover(altura,this, pilonDestino);
     }
 
-    public abstract void recibirCartas(List<Carta> cartasAgregar);
+    public abstract boolean recibirCartas(List<Carta> cartasAgregar);
 
     //public abstract void recibirCarta(Carta carta);
 

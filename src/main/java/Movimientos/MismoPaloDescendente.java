@@ -6,16 +6,24 @@ import Comunes.Carta.Numero;
 import Comunes.Palo.Palo;
 import Comunes.Pilon.Pilon;
 
+import java.util.List;
+
 public class MismoPaloDescendente implements Movimiento {
 
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {
-        Carta cartaOrigen = pilonOrigen.getCarta(altura);
-        Carta cartaDestino = pilonDestino.getUltimaCarta();
+        List<Carta> cartasOrigen = pilonOrigen.sacarPilon(altura);
+        if(cartasOrigen == null)
+            return;
 
-        if(cartaDestino.esSiguiente(cartaOrigen, this))
-            pilonDestino.recibirCartas(pilonOrigen.sacarPilon(altura));
-
+        //Debemos devolver las cartas al pilon del que la sacamos en caso que el
+        // destino no pueda recibir las cartas
+        if(!pilonDestino.recibirCartas(cartasOrigen)){
+            Movimiento actual = pilonOrigen.getMovimiento();
+            pilonOrigen.setMovimiento(new MovimientoLibre());
+            pilonOrigen.recibirCartas(cartasOrigen);
+            pilonOrigen.setMovimiento(actual);
+        }
     }
 
     @Override

@@ -43,7 +43,6 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "git-widget-placeholder": "dev__tests",
     "last_opened_file_path": "C:/Users/gonza/IdeaProjects/Algo3/TP-Solitario-privado",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -58,98 +57,87 @@
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Movimientos" />
       <recent name="Comunes.Carta" />
       <recent name="Comunes.Pilon" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CartaTest.testCartaEnEstadoInicial">
-    <configuration name="CartaTest.testCambiosDeEstado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in TPSolitarios">
+    <configuration name="All in TPSolitarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPSolitarios" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Comunes.Carta.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Carta" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Carta.CartaTest" />
-      <option name="METHOD_NAME" value="testCambiosDeEstado" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartaTest.testCartaEnEstadoInicial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ColorIntercaladoDescendenteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPSolitarios" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Comunes.Carta.*" />
+          <option name="PATTERN" value="Movimientos.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Carta" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Carta.CartaTest" />
-      <option name="METHOD_NAME" value="testCartaEnEstadoInicial" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="Movimientos" />
+      <option name="MAIN_CLASS_NAME" value="Movimientos.ColorIntercaladoDescendenteTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColumnaTest.testObtenerCartaEnNPosicionEsCorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MismoPaloAscendenteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPSolitarios" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Comunes.Pilon.*" />
+          <option name="PATTERN" value="Movimientos.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.ColumnaTest" />
-      <option name="METHOD_NAME" value="testObtenerCartaEnNPosicionEsCorrecta" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="Movimientos" />
+      <option name="MAIN_CLASS_NAME" value="Movimientos.MismoPaloAscendenteTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColumnaTest.testObtenerLaPrimeraCartaEsCorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MismoPaloDescendenteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPSolitarios" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Comunes.Pilon.*" />
+          <option name="PATTERN" value="Movimientos.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.ColumnaTest" />
-      <option name="METHOD_NAME" value="testObtenerLaPrimeraCartaEsCorrecta" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="Movimientos" />
+      <option name="MAIN_CLASS_NAME" value="Movimientos.MismoPaloDescendenteTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColumnaTest.testObtenerLaUltimaCartaEsCorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovimientoLibreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPSolitarios" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Comunes.Pilon.*" />
+          <option name="PATTERN" value="Movimientos.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.ColumnaTest" />
-      <option name="METHOD_NAME" value="testObtenerLaUltimaCartaEsCorrecta" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="Movimientos" />
+      <option name="MAIN_CLASS_NAME" value="Movimientos.MovimientoLibreTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CartaTest.testCartaEnEstadoInicial" />
-        <item itemvalue="JUnit.ColumnaTest.testObtenerLaUltimaCartaEsCorrecta" />
-        <item itemvalue="JUnit.ColumnaTest.testObtenerLaPrimeraCartaEsCorrecta" />
-        <item itemvalue="JUnit.ColumnaTest.testObtenerCartaEnNPosicionEsCorrecta" />
-        <item itemvalue="JUnit.CartaTest.testCambiosDeEstado" />
+        <item itemvalue="JUnit.All in TPSolitarios" />
+        <item itemvalue="JUnit.MovimientoLibreTest" />
+        <item itemvalue="JUnit.MismoPaloDescendenteTest" />
+        <item itemvalue="JUnit.ColorIntercaladoDescendenteTest" />
+        <item itemvalue="JUnit.MismoPaloAscendenteTest" />
       </list>
     </recent_temporary>
   </component>
@@ -186,6 +174,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Movimientos/MismoPaloAscendente.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$CartaTest_testCartaEnEstadoInicial.ic" NAME="CartaTest.testCartaEnEstadoInicial Coverage Results" MODIFIED="1696291704993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

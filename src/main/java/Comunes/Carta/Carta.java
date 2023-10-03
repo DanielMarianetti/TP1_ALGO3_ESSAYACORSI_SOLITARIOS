@@ -6,7 +6,6 @@ import Movimientos.Movimiento;
 public class Carta {
 
     private CartaState state;
-    private Carta siguiente;
     private final Numero numero;
     private final Palo palo;
 
@@ -27,7 +26,7 @@ public class Carta {
     }
 
     public boolean equals(Palo otroPalo, Numero otroNumero){
-        boolean esIgual = this.palo == otroPalo;
+        boolean esIgual = palo.igualPalo(otroPalo);
         if(this.numero != otroNumero)
             esIgual = false;
         return esIgual;

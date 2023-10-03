@@ -71,11 +71,10 @@ public class Mazo extends Pilon{
     }
 
     @Override
-    public void recibirCartas(List<Carta> cartasAgregar) {
-        if(cartasAgregar != null){
-            for(Carta carta : cartasAgregar)
-                mazo.push(carta);
-        }
+    public boolean recibirCartas(List<Carta> cartasAgregar) {
+        for(Carta carta : cartasAgregar)
+            mazo.push(carta);
+        return true;
     }
 
 

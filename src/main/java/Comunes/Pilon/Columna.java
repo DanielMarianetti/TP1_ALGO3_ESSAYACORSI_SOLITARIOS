@@ -51,10 +51,12 @@ public class Columna extends Pilon {
     }
 
     @Override
-    public void recibirCartas(List<Carta> cartasAgregar) {
-        if(cartasAgregar != null) {
+    public boolean recibirCartas(List<Carta> cartasAgregar) {
+        if(this.getUltimaCarta().esSiguiente(cartasAgregar.get(0), movimiento)){
             columna.addAll(cartasAgregar);
+            return true;
         }
+        return false;
     }
 
     /*@Override
