@@ -11,14 +11,13 @@ public class CartaTest extends TestCase {
         //Arrange
         Carta carta = new Carta(Numero.As, new Corazon());
         String estadoEsperado = "Boca Abajo";
-        String paloEsperado = "Corazon";
         Numero numeroEsperado = Numero.As;
 
         //Act
 
         //Assert
         assertEquals(estadoEsperado, carta.getState());
-        assertEquals(paloEsperado, carta.getPalo().getNombre());
+        assertTrue(carta.getPalo().igualPalo(new Corazon()));
         assertEquals (carta.getNumero().ordinal(), (numeroEsperado.ordinal()));
     }
 

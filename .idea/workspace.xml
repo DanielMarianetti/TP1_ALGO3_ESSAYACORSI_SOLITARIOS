@@ -37,18 +37,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "last_opened_file_path": "C:/Users/gonza/IdeaProjects/Algo3/TP-Solitario-privado",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gonza/IdeaProjects/Algo3/TP-Solitario-privado&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Movimientos" />
@@ -71,31 +71,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColorIntercaladoDescendenteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MazoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPSolitarios" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Movimientos.*" />
+          <option name="PATTERN" value="Comunes.Pilon.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Movimientos" />
-      <option name="MAIN_CLASS_NAME" value="Movimientos.ColorIntercaladoDescendenteTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MismoPaloAscendenteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPSolitarios" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Movimientos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Movimientos" />
-      <option name="MAIN_CLASS_NAME" value="Movimientos.MismoPaloAscendenteTest" />
+      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.MazoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,13 +116,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SolitarioTest.testSolitarioEnEstadoEspecificoInicial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Juego.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Juego" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Juego.SolitarioTest" />
+      <option name="METHOD_NAME" value="testSolitarioEnEstadoEspecificoInicial" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in TPSolitarios" />
+        <item itemvalue="JUnit.MazoTest" />
+        <item itemvalue="JUnit.SolitarioTest.testSolitarioEnEstadoEspecificoInicial" />
         <item itemvalue="JUnit.MovimientoLibreTest" />
         <item itemvalue="JUnit.MismoPaloDescendenteTest" />
-        <item itemvalue="JUnit.ColorIntercaladoDescendenteTest" />
-        <item itemvalue="JUnit.MismoPaloAscendenteTest" />
       </list>
     </recent_temporary>
   </component>

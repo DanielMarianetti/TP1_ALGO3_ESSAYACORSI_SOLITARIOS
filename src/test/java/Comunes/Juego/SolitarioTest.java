@@ -2,6 +2,7 @@ package Comunes.Juego;
 
 import Comunes.Carta.Carta;
 import Comunes.Carta.Numero;
+import Comunes.Palo.Corazon;
 import Comunes.Palo.Trebol;
 import Comunes.Pilon.Pilon;
 import junit.framework.TestCase;
@@ -52,7 +53,7 @@ public class SolitarioTest extends TestCase {
         s.movimientoLibre(0);
         s.setJuegoComenzado(true);
         //Assert
-        assertEquals(cartaEsperada.getPalo().getNombre(), s.tableau.get(0).getUltimaCarta().getPalo().getNombre());
+        assertTrue(cartaEsperada.getPalo().igualPalo( s.tableau.get(0).getUltimaCarta().getPalo()));
         assertEquals(cartaEsperada.getNumero().ordinal(), s.tableau.get(0).getUltimaCarta().getNumero().ordinal());
         assertTrue(s.juegoComenzado);
         assertFalse(s.juegoGanado());
