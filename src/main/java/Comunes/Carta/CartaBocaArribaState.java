@@ -27,4 +27,9 @@ public class CartaBocaArribaState implements CartaState {
     public void traerAlMazo() {
         this.carta.cambiarState(new CartaBocaAbajoState(this.carta));
     }
+
+    @Override
+    public String mostrarEstado() {
+        return "Boca Arriba";
+    }
 }

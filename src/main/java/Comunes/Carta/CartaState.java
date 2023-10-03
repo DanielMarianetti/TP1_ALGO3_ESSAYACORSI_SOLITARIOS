@@ -11,4 +11,6 @@ public interface CartaState {
     void ultimaPilon();
 
     void traerAlMazo();
+
+    String mostrarEstado();
 }

@@ -3,7 +3,7 @@ package Comunes.Palo;
 import java.util.ArrayList;
 
 public class Diamante extends Palo {
-
+    private String nombre = "Diamante";
     public Palo obtenerMismoPalo(){
         return new Diamante();
     }
@@ -18,5 +18,9 @@ public class Diamante extends Palo {
         palos.add(new Pica());
         palos.add(new Trebol());
         return palos;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 }

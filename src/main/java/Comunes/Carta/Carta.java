@@ -47,8 +47,8 @@ public class Carta {
 
     public void pedirDelMazo() {this.state.pedirDelMazo(); }
 
-    public CartaState getState() {
-        return state;
+    public String getState() {
+        return state.mostrarEstado();
     }
 
     public Numero getNumero() {

@@ -1,31 +1,24 @@
 package Comunes.Juego;
 
+import Comunes.Carta.Carta;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.*;
 import java.util.List;
+import java.util.ArrayList;
 
 public abstract class Solitario {
 
     public List<Pilon> tableau;
     public Pilon mazo;
     public List<Pilon> foundation;
+    public Pilon waste;
     public boolean juegoComenzado = false;
 
-    /*public Solitario() {
+    public Solitario() {
         this.tableau = new ArrayList<>();
         this.foundation = new ArrayList<>();
-        Movimiento movimiento = new DifetenteColor();
-        for (int i = 0; i < 7; i++) {
-            Pilon columna = new Columna(movimiento);
-            this.tableau.add(columna);
-        }
-        movimiento = new MismoPalo();
-        for (int i = 0; i < 4; i++) {
-            Pilon columna = new Columna(movimiento);
-            this.tableau.add(columna);
-        }
-    }*/
+    }
 
     ///Crea un juego random
     public void IniciarRandom() {
@@ -49,13 +42,35 @@ public abstract class Solitario {
     public void setJuegoComenzado(boolean juegoComenzado) {
         if (juegoComenzado) {
             for (Pilon columna : this.tableau) {
-                columna.getUltimaCarta().ultimaPilon();
+                if (!columna.isPilonVacio()) {
+                    columna.getUltimaCarta().ultimaPilon();
+                }
             }
         }
         this.juegoComenzado = juegoComenzado;
     }
 
+    public void movimientoLibre(int columna) {
+        if (!this.juegoComenzado) {
+            this.mazo.mover(this.mazo.cantidadCartas()-1, this.tableau.get(columna));
+        }
+    }
+
     //El objetivo a completar depende del tipo de solitario
     public abstract boolean juegoGanado();
+
+    public abstract void moverMazoAWaste();
+
+    public abstract void rearmarMazo(Carta carta, Pilon pilonDestino);
+
+    public abstract void moverWasteAPilon(int colunma);
+
+    public abstract void moverWasteAFoundation(int foundation);
+
+    public abstract void moverPilonAPilon(int columnaOrigen, int altura, int columnaDestino);
+
+    public abstract void moverPilonAFoundation(int columnaOrigen, int altura, int foundationDestino);
+
+    public abstract void moverFoundationAPilon(int foundationOrigen, int altura,  int columnaDestino);
 
 }

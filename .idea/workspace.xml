@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16fdcb84-5b4f-43da-997d-ae2e81aaff66" name="Changes" comment="">
+    <list default="true" id="7deb9b0d-6886-4b0a-b984-d48685127842" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Carta/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Carta/Carta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Carta/CartaBocaAbajoState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Carta/CartaBocaAbajoState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Carta/CartaBocaArribaState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Carta/CartaBocaArribaState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Carta/CartaState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Carta/CartaState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Juego/Klondike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Juego/Klondike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Juego/Solitario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Juego/Solitario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Corazon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Corazon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Diamante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Diamante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Palo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Palo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Pica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Pica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Trebol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Palo/Trebol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Movimientos/MovimientoLibre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Movimientos/MovimientoLibre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Comunes/Carta/CartaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Comunes/Carta/CartaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Comunes/Pilon/ColumnaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Comunes/Pilon/ColumnaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Comunes/Pilon/MazoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Comunes/Pilon/MazoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev_tests" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -43,7 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "git-widget-placeholder": "dev__tests",
+    "git-widget-placeholder": "dev__tests-Carta",
     "last_opened_file_path": "C:/Users/gonza/IdeaProjects/Algo3/TP-Solitario-privado",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -58,86 +76,78 @@
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Comunes.Juego" />
       <recent name="Comunes.Carta" />
       <recent name="Comunes.Pilon" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CartaTest.testCartaEnEstadoInicial">
-    <configuration name="CartaTest.testCambiosDeEstado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SolitarioTest.testMovimiento">
+    <configuration name="Comunes in TPSolitarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/Comunes" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SolitarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPSolitarios" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Comunes.Carta.*" />
+          <option name="PATTERN" value="Comunes.Juego.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Carta" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Carta.CartaTest" />
-      <option name="METHOD_NAME" value="testCambiosDeEstado" />
+      <option name="PACKAGE_NAME" value="Comunes.Juego" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Juego.SolitarioTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SolitarioTest.testMovimiento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Juego.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Juego" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Juego.SolitarioTest" />
+      <option name="METHOD_NAME" value="testMovimiento" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartaTest.testCartaEnEstadoInicial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SolitarioTest.testSolitarioEnEstadoEspecificoInicial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPSolitarios" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Comunes.Carta.*" />
+          <option name="PATTERN" value="Comunes.Juego.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Carta" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Carta.CartaTest" />
-      <option name="METHOD_NAME" value="testCartaEnEstadoInicial" />
+      <option name="PACKAGE_NAME" value="Comunes.Juego" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Juego.SolitarioTest" />
+      <option name="METHOD_NAME" value="testSolitarioEnEstadoEspecificoInicial" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColumnaTest.testObtenerCartaEnNPosicionEsCorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SolitarioTest.testSolitarioEnEstadoRandomInicial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TPSolitarios" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Comunes.Pilon.*" />
+          <option name="PATTERN" value="Comunes.Juego.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.ColumnaTest" />
-      <option name="METHOD_NAME" value="testObtenerCartaEnNPosicionEsCorrecta" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ColumnaTest.testObtenerLaPrimeraCartaEsCorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPSolitarios" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Comunes.Pilon.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.ColumnaTest" />
-      <option name="METHOD_NAME" value="testObtenerLaPrimeraCartaEsCorrecta" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ColumnaTest.testObtenerLaUltimaCartaEsCorrecta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TPSolitarios" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Comunes.Pilon.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Comunes.Pilon" />
-      <option name="MAIN_CLASS_NAME" value="Comunes.Pilon.ColumnaTest" />
-      <option name="METHOD_NAME" value="testObtenerLaUltimaCartaEsCorrecta" />
+      <option name="PACKAGE_NAME" value="Comunes.Juego" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Juego.SolitarioTest" />
+      <option name="METHOD_NAME" value="testSolitarioEnEstadoRandomInicial" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,18 +155,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CartaTest.testCartaEnEstadoInicial" />
-        <item itemvalue="JUnit.ColumnaTest.testObtenerLaUltimaCartaEsCorrecta" />
-        <item itemvalue="JUnit.ColumnaTest.testObtenerLaPrimeraCartaEsCorrecta" />
-        <item itemvalue="JUnit.ColumnaTest.testObtenerCartaEnNPosicionEsCorrecta" />
-        <item itemvalue="JUnit.CartaTest.testCambiosDeEstado" />
+        <item itemvalue="JUnit.SolitarioTest.testMovimiento" />
+        <item itemvalue="JUnit.SolitarioTest.testSolitarioEnEstadoEspecificoInicial" />
+        <item itemvalue="JUnit.SolitarioTest" />
+        <item itemvalue="JUnit.SolitarioTest.testSolitarioEnEstadoRandomInicial" />
+        <item itemvalue="JUnit.Comunes in TPSolitarios" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="16fdcb84-5b4f-43da-997d-ae2e81aaff66" name="Changes" comment="" />
+      <changelist id="7deb9b0d-6886-4b0a-b984-d48685127842" name="Changes" comment="" />
       <created>1696252321647</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -187,7 +197,37 @@
       </map>
     </option>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/Comunes/Carta/CartaTest.java</url>
+          <line>7</line>
+          <properties class="Comunes.Carta.CartaTest" method="testCartaEnEstadoInicial">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/Comunes/Juego/SolitarioTest.java</url>
+          <line>44</line>
+          <properties class="Comunes.Juego.SolitarioTest" method="testSolitarioEnEstadoEspecificoInicial">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$CartaTest.ic" NAME="CartaTest Coverage Results" MODIFIED="1696295777885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Comunes.Carta.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$SolitarioTest.ic" NAME="SolitarioTest Coverage Results" MODIFIED="1696298591219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Comunes.Juego.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$CartaTest_testCartaEnEstadoInicial.ic" NAME="CartaTest.testCartaEnEstadoInicial Coverage Results" MODIFIED="1696291704993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Comunes.Carta.*</FILTER>
     </SUITE>

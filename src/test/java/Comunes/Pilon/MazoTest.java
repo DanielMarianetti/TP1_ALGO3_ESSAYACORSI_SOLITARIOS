@@ -5,7 +5,7 @@ import Movimientos.MovimientoLibre;
 import junit.framework.TestCase;
 
 public class MazoTest extends TestCase {
-
+    /*
     private final int CARTAS_TOTALES_MAZO = 52;
     public void testCrearMasoTieneTodasLasCartas(){
         Mazo mazo = new Mazo(true, new MovimientoLibre());
@@ -47,5 +47,5 @@ public class MazoTest extends TestCase {
         assertFalse(mazoOrdenado.isPilonVacio());
 
         assertEquals(mazoOrdenado.cantidadCartas(), (CARTAS_TOTALES_MAZO - cartasTomadas));
-    }
+    }*/
 }

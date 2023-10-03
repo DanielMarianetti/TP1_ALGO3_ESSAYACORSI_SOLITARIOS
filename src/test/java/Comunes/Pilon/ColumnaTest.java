@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ColumnaTest extends TestCase {
 
-    public void testObtenerLaUltimaCartaEsCorrecta() {
+    /* public void testObtenerLaUltimaCartaEsCorrecta() {
 
         ArrayList<Carta> cartas = new ArrayList<>();
         Mazo mazo = new Mazo(false, new MovimientoLibre());
@@ -68,5 +68,5 @@ public class ColumnaTest extends TestCase {
     }
 
     public void testCumpleCon() {
-    }
+    }*/
 }

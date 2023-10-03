@@ -15,6 +15,7 @@ public abstract class Palo {
     public abstract Palo obtenerMismoPalo();
     public abstract ArrayList<Palo> obtenerMismoColor();
     public abstract ArrayList<Palo> obtenerOtroColor();
+    public abstract String getNombre();
 }
 
 
