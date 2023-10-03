@@ -26,11 +26,6 @@ public class Columna extends Pilon {
     }
 
     @Override
-    public void setCartas(List<Carta> cartas){
-        columna = cartas;
-    }
-
-    @Override
     public Carta getUltimaCarta() {
         return this.columna.get(this.columna.size()-1);
     }

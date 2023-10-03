@@ -41,11 +41,6 @@ public class Mazo extends Pilon{
         this.mazo = (Stack<Carta>) cartas;
     }
 
-    @Override
-    public void setCartas(List<Carta> cartas){
-        mazo = (Stack<Carta>) cartas;
-    }
-
     private void mezclar(Stack<Carta> cartas) {
         Collections.shuffle(cartas);
     }
