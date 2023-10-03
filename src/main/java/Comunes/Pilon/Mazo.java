@@ -5,7 +5,9 @@ import Comunes.Carta.Numero;
 import Comunes.Palo.Palo;
 import Movimientos.Movimiento;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 public class Mazo extends Pilon{
@@ -28,6 +30,10 @@ public class Mazo extends Pilon{
     public Mazo(Movimiento movimiento) {
         super(movimiento);
         this.mazo = new Stack<>();
+    }
+    @Override
+    public void setCartas(List<Carta> cartas){
+        mazo = (Stack<Carta>) cartas;
     }
 
     private void mezclar(Stack<Carta> cartas) {
@@ -60,13 +66,25 @@ public class Mazo extends Pilon{
     }
 
     @Override
-    public void recibirCarta(Carta carta) {
-        this.mazo.push(carta);
+    public void recibirCartas(List<Carta> cartasAgregar) {
+        if(cartasAgregar != null){
+            for(Carta carta : cartasAgregar)
+                mazo.push(carta);
+        }
     }
 
+
+    /*@Override
+    public void recibirCarta(Carta carta){
+        this.mazo.push(carta);
+    }*/
+
+
     @Override
-    public Carta sacarCarta(int i) {
-        return this.mazo.pop();
+    public List<Carta> sacarPilon(int i) {
+        List<Carta> cartas = new ArrayList<>();
+        cartas.add(this.mazo.pop());
+        return cartas;
     }
 
     @Override

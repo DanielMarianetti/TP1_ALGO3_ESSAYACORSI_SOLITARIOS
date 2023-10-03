@@ -10,7 +10,7 @@ public class MovimientoLibre implements Movimiento {
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {
         Carta cartaOrigen = pilonOrigen.getCarta(altura);
-        pilonDestino.recibirCarta(pilonOrigen.sacarCarta(altura));
+        pilonDestino.recibirCartas(pilonOrigen.sacarPilon(altura));
     }
 
     public boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear) {
