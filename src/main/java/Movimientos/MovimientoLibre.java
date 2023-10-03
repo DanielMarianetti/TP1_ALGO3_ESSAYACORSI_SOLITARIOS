@@ -9,7 +9,8 @@ import Comunes.Pilon.Pilon;
 public class MovimientoLibre implements Movimiento {
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {
-        pilonDestino.recibirCarta(pilonOrigen.sacarCarta(altura));
+        Carta cartaOrigen = pilonOrigen.getCarta(altura);
+        pilonDestino.recibirCartas(pilonOrigen.sacarPilon(altura));
     }
 
     public boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear) {

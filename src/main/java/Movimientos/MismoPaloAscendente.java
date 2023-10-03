@@ -14,7 +14,7 @@ public class MismoPaloAscendente implements Movimiento{
         Carta cartaDestino = pilonDestino.getUltimaCarta();
 
         if(cartaDestino.esSiguiente(cartaOrigen, this))
-            pilonDestino.recibirCarta(pilonOrigen.sacarCarta(altura));
+            pilonDestino.recibirCartas(pilonOrigen.sacarPilon(altura));
 
     }
 

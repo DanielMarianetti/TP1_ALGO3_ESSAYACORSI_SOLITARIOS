@@ -2,14 +2,11 @@ package Comunes.Juego;
 
 import Comunes.Carta.Carta;
 import Comunes.Pilon.Columna;
-import Comunes.Pilon.Columna;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.*;
 import Objetivos.Objetivo;
 import Objetivos.PilonEnteroMismoPaloAsc;
-
-import java.util.List;
 
 public class Klondike extends Solitario {
 
@@ -40,7 +37,7 @@ public class Klondike extends Solitario {
         int contador = 0;
         for (Pilon columna : this.tableau) {
             for (int x = 0; x <= contador; x++) {
-                columna.recibirCarta(this.mazo.sacarCarta(this.mazo.cantidadCartas()-1));
+                columna.recibirCartas(this.mazo.sacarPilon(this.mazo.cantidadCartas()-1));
             }
             contador++;
             contador++;

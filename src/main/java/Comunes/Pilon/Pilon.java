@@ -4,6 +4,8 @@ import Comunes.Carta.Carta;
 import Movimientos.Movimiento;
 import java.util.List;
 
+import java.util.List;
+
 public abstract class Pilon {
 
     public Movimiento movimiento;
@@ -33,9 +35,11 @@ public abstract class Pilon {
         this.movimiento.mover(altura,this, pilonDestino);
     }
 
-    public abstract void recibirCarta(Carta carta);
+    public abstract void recibirCartas(List<Carta> cartasAgregar);
 
-    public abstract Carta sacarCarta(int i);
+    //public abstract void recibirCarta(Carta carta);
+
+    public abstract List<Carta> sacarPilon(int i);
 
     public abstract boolean cumpleCon(Movimiento movimientoControl, int cantidadSecuencia);
 }
