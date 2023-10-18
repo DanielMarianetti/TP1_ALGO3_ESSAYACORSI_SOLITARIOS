@@ -1,24 +1,21 @@
 package Comunes.Carta;
 
-import Comunes.Palo.Palo;
-import Movimientos.Movimiento;
-
 public class Carta {
 
-    private CartaState state;
+    private boolean bocaArriba;
     private final Numero numero;
     private final Palo palo;
 
     public Carta(Numero numero, Palo palo){
         this.numero = numero;
         this.palo = palo;
-        this.state = new CartaBocaAbajoState(this);
+        this.bocaArriba = false;
     }
 
-    public Carta(Numero numero, Palo palo, CartaState estado){
+    public Carta(Numero numero, Palo palo, boolean estado){
         this.numero = numero;
         this.palo = palo;
-        this.state = estado;
+        this.bocaArriba = estado;
     }
 
     public boolean equals(Carta otraCarta){
@@ -26,28 +23,15 @@ public class Carta {
     }
 
     public boolean equals(Palo otroPalo, Numero otroNumero){
-        boolean esIgual = palo.igualPalo(otroPalo);
-        if(this.numero != otroNumero)
-            esIgual = false;
-        return esIgual;
+        return this.getPalo() == otroPalo && this.getNumero() == otroNumero;
     }
 
-    public void cambiarState(CartaState newState) {
-        this.state = newState;
+    public void setBocaArriba(boolean cara) {
+        this.bocaArriba = cara;
     }
 
-    public void ultimaPilon() {
-        this.state.ultimaPilon();
-    }
-
-    public void traerAlMazo() {
-        this.state.traerAlMazo();
-    }
-
-    public void pedirDelMazo() {this.state.pedirDelMazo(); }
-
-    public String getState() {
-        return state.mostrarEstado();
+    public boolean isBocaArriba() {
+        return this.bocaArriba;
     }
 
     public Numero getNumero() {
@@ -58,7 +42,4 @@ public class Carta {
         return palo;
     }
 
-    public boolean esSiguiente(Carta cartaChequear, Movimiento movimiento) {
-        return movimiento.esSiguiente(this.palo, this.numero, cartaChequear);
-    }
 }

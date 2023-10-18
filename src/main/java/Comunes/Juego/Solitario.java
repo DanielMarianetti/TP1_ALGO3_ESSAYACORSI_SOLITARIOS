@@ -1,6 +1,5 @@
 package Comunes.Juego;
 
-import Comunes.Carta.Carta;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.*;
@@ -15,21 +14,21 @@ public abstract class Solitario {
     public Pilon waste;
     public boolean juegoComenzado = false;
 
+    public boolean juegoGanado = false;
+
     public Solitario() {
         this.tableau = new ArrayList<>();
         this.foundation = new ArrayList<>();
+        this.waste = new Mazo(new MovimientoLibre());
     }
 
     ///Crea un juego random
-    public void IniciarRandom() {
+    public void iniciarRandom() {
         Movimiento movimiento = new MovimientoLibre();
         this.mazo = new Mazo(false, movimiento);
         this.setJuego();
         this.setJuegoComenzado(true);
     }
-
-    //Prepara cuantas cartas van a cada pila, depende de cada solitario
-    public abstract void setJuego();
 
     ///Deja el juego listo para empezar a ser jugado a partir de un mazo ordenado
     public void iniciarOrdenado() {
@@ -43,7 +42,7 @@ public abstract class Solitario {
         if (juegoComenzado) {
             for (Pilon columna : this.tableau) {
                 if (!columna.isPilonVacio()) {
-                    columna.getUltimaCarta().ultimaPilon();
+                    columna.getUltimaCarta().setBocaArriba(true);
                 }
             }
         }
@@ -53,15 +52,19 @@ public abstract class Solitario {
     public void movimientoLibre(int columna) {
         if (!this.juegoComenzado) {
             this.mazo.mover(this.mazo.cantidadCartas()-1, this.tableau.get(columna));
+            this.tableau.get(columna).getUltimaCarta().setBocaArriba(true);
         }
     }
+
+    //Prepara cuantas cartas van a cada pila, depende de cada solitario
+    public abstract void setJuego();
 
     //El objetivo a completar depende del tipo de solitario
     public abstract boolean juegoGanado();
 
     public abstract void moverMazoAWaste();
 
-    public abstract void rearmarMazo(Carta carta, Pilon pilonDestino);
+    public abstract void rearmarMazo();
 
     public abstract void moverWasteAPilon(int colunma);
 

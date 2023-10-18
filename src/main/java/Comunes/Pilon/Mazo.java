@@ -2,7 +2,7 @@ package Comunes.Pilon;
 
 import Comunes.Carta.Carta;
 import Comunes.Carta.Numero;
-import Comunes.Palo.Palo;
+import Comunes.Carta.Palo;
 import Movimientos.Movimiento;
 
 import java.util.ArrayList;
@@ -16,14 +16,14 @@ public class Mazo extends Pilon{
     public Mazo(boolean ordenado, Movimiento movimiento) {
         super(movimiento);
         this.mazo = new Stack<>();
-        for (Palo palo : Palo.obtenerPalos()) {
+        for (Palo palo : Palo.values()) {
             for (Numero numero : Numero.values()) {
                 Carta carta = new Carta(numero, palo);
                 this.mazo.push(carta);
             }
         }
         if (!ordenado) {
-            Collections.shuffle(this.mazo);
+            mezclar();
         }
     }
 
@@ -31,18 +31,16 @@ public class Mazo extends Pilon{
         super(movimiento);
         this.mazo = new Stack<>();
     }
+
     @Override
-    public void setCartas(List<Carta> cartas){
-        mazo = (Stack<Carta>) cartas;
+    public void setCartas(List<Carta> cartas) {
+        for(Carta carta : cartas) {
+            mazo.push(carta);
+        }
     }
 
-    public Mazo(Movimiento movimiento, List<Carta> cartas) {
-        super(movimiento);
-        this.mazo = (Stack<Carta>) cartas;
-    }
-
-    private void mezclar(Stack<Carta> cartas) {
-        Collections.shuffle(cartas);
+    private void mezclar() {
+        Collections.shuffle(this.mazo);
     }
 
     @Override
@@ -52,12 +50,12 @@ public class Mazo extends Pilon{
 
     @Override
     public Carta getPrimeraCarta() {
-        return null;
+        return this.mazo.get(0);
     }
 
     @Override
     public Carta getCarta(int i) {
-        return this.mazo.remove(i);
+        return this.mazo.get(i);
     }
 
     @Override
@@ -71,29 +69,17 @@ public class Mazo extends Pilon{
     }
 
     @Override
-    public boolean recibirCartas(List<Carta> cartasAgregar) {
-        for(Carta carta : cartasAgregar)
+    public void recibirCartas(List<Carta> cartasAgregar) {
+        for(Carta carta : cartasAgregar) {
             mazo.push(carta);
-        return true;
+        }
     }
-
-
-    /*@Override
-    public void recibirCarta(Carta carta){
-        this.mazo.push(carta);
-    }*/
-
 
     @Override
     public List<Carta> sacarPilon(int i) {
         List<Carta> cartas = new ArrayList<>();
         cartas.add(this.mazo.pop());
         return cartas;
-    }
-
-    @Override
-    public boolean cumpleCon(Movimiento movimientoControl, int cantidadSecuencia) {
-        return false;
     }
 
 }

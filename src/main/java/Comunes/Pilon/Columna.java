@@ -17,7 +17,7 @@ public class Columna extends Pilon {
 
     public Columna(Movimiento movimiento, List<Carta> cartas) {
         super(movimiento);
-        this.columna = cartas;
+        setCartas(cartas);
     }
 
     @Override
@@ -27,6 +27,9 @@ public class Columna extends Pilon {
 
     @Override
     public Carta getUltimaCarta() {
+        if (this.isPilonVacio()) {
+            return null;
+        }
         return this.columna.get(this.columna.size()-1);
     }
 
@@ -51,64 +54,43 @@ public class Columna extends Pilon {
     }
 
     @Override
-    public boolean recibirCartas(List<Carta> cartasAgregar) {
-        if(this.getUltimaCarta().esSiguiente(cartasAgregar.get(0), movimiento)){
-            columna.addAll(cartasAgregar);
-            return true;
+    public void recibirCartas(List<Carta> cartasAgregar) {
+        if (cartasAgregar == null) {
+            return;
         }
-        return false;
+        columna.addAll(cartasAgregar);
     }
-
-    /*@Override
-    public void recibirCarta(Carta carta) {
-        this.columna.add(carta);
-    }*/
 
     @Override
     public List<Carta> sacarPilon(int indice) {
-        int indiceInicial = indice;
-
-        if(indice >= this.cantidadCartas())
+        if (indice >= this.cantidadCartas() || !this.getCarta(indice).isBocaArriba()) {
             return null;
-
-        List<Carta> cartas = new ArrayList<>();
-        Carta cartaActual = columna.get(indice);
-        cartas.add(cartaActual);
-
-        if(indice + 1 == this.cantidadCartas())
-            return cartas;
-
-        Carta cartaSiguiente;
-
-        while(indice + 1 < this.cantidadCartas()){
-            cartaSiguiente = columna.get(++indice);
-            if(cartaActual.esSiguiente(cartaSiguiente, movimiento)){
-                cartaActual = cartaSiguiente;
-                cartas.add(cartaActual);
-            } else {
-                return null;
-            }
         }
 
-        List<Carta> cartasEliminar = columna.subList(indiceInicial, columna.size());
+        boolean validado;
+        List<Carta> cartas = new ArrayList<>();
+
+        if (cantidadCartas() == 1) {
+            cartas.add(this.columna.remove(0));
+            return cartas;
+        }
+
+        Carta cartaInicial = this.getCarta(indice);
+        cartas.add(cartaInicial);
+
+        for (int i = cantidadCartas()-1; i > indice; i--) {
+            Carta cartaActual = this.getCarta(i);
+            Carta cartaSiguiente = this.getCarta(i-1);
+            validado = this.movimiento.esSiguiente(cartaActual.getPalo(), cartaActual.getNumero(), cartaSiguiente);
+            if (!validado) {
+                return null;
+            }
+            cartas.add(cartaActual);
+        }
+
+        List<Carta> cartasEliminar = columna.subList(indice, columna.size());
         columna.removeAll(cartasEliminar);
         return cartas;
     }
 
-    @Override
-    public boolean cumpleCon(Movimiento movimientoControl, int cantidadSecuencia) {
-        for (int i = 0; i <= columna.size() - cantidadSecuencia; i++) {
-            boolean secuenciaHallada = true;
-            for (int j = 0; j < cantidadSecuencia; j++) {
-                if (!columna.get(i + j).esSiguiente(columna.get(i + j + 1), movimientoControl)) {
-                    secuenciaHallada = false;
-                    break;
-                }
-            }
-            if (secuenciaHallada) {
-                return true;
-            }
-        }
-        return false;
-    }
 }

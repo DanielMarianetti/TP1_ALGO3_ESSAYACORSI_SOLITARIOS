@@ -1,9 +1,8 @@
 package Movimientos;
 
 import Comunes.Carta.Carta;
-import Comunes.Carta.CartaBocaArribaState;
 import Comunes.Carta.Numero;
-import Comunes.Palo.Palo;
+import Comunes.Carta.Palo;
 import Comunes.Pilon.Pilon;
 
 import java.util.List;
@@ -13,30 +12,31 @@ public class MismoPaloAscendente implements Movimiento{
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {
         List<Carta> cartasOrigen = pilonOrigen.sacarPilon(altura);
-        if(cartasOrigen == null)
-            return;
 
-        //Debemos devolver las cartas al pilon del que la sacamos en caso que el
-        // destino no pueda recibir las cartas
-        if(!pilonDestino.recibirCartas(cartasOrigen)){
-            Movimiento actual = pilonOrigen.getMovimiento();
-            pilonOrigen.setMovimiento(new MovimientoLibre());
+        if (cartasOrigen == null) {
+            return;
+        }
+
+        Carta cartaDestino = pilonDestino.getUltimaCarta();
+        Carta cartaOrigen = cartasOrigen.get(0);
+
+        if (esSiguiente(cartaOrigen.getPalo(), cartaOrigen.getNumero(), cartaDestino)) {
+            pilonDestino.recibirCartas(cartasOrigen);
+        } else {
             pilonOrigen.recibirCartas(cartasOrigen);
-            pilonOrigen.setMovimiento(actual);
         }
     }
 
     @Override
     public boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear){
-        if(numero == Numero.K)
+        if (cartaChequear == null & numero == Numero.AS) {
+            return true;
+        } else if (cartaChequear == null & numero != Numero.AS) {
             return false;
+        }
 
-        int ordinal = numero.ordinal();
-        Numero numeroSiguiente = Numero.values()[ordinal + 1];
-
-        Carta siguiente = new Carta(numeroSiguiente, palo.obtenerMismoPalo());
-        siguiente.cambiarState(new CartaBocaArribaState(siguiente));
-
-        return siguiente.equals(cartaChequear);
+        Numero numeroSiguiente = Numero.values()[numero.ordinal() - 1];
+        Carta cartaSiguiente = new Carta(numeroSiguiente, palo, true);
+        return cartaSiguiente.equals(cartaChequear);
     }
 }

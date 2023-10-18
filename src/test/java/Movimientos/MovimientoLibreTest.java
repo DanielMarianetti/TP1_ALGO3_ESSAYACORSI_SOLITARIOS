@@ -2,35 +2,33 @@ package Movimientos;
 
 import Comunes.Carta.Carta;
 import Comunes.Carta.Numero;
-import Comunes.Palo.Corazon;
-import Comunes.Palo.Diamante;
-import Comunes.Palo.Pica;
-import Comunes.Palo.Trebol;
+
+import Comunes.Carta.Palo;
 import Comunes.Pilon.Columna;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
 
 public class MovimientoLibreTest extends TestCase {
+
     public void testMovimientoLibreCumpleUno() {
         Movimiento mov = new MovimientoLibre();
-        Carta carta  = new Carta(Numero.Nueve, new Pica());
-        assert mov.esSiguiente(new Diamante(), Numero.As, carta);
+        Carta carta  = new Carta(Numero.NUEVE, Palo.TREBOL);
+        assert mov.esSiguiente(Palo.TREBOL, Numero.AS, carta);
     }
 
     public void testMovimientoLibreCumpleDos() {
         Movimiento mov = new MovimientoLibre();
-        Carta carta  = new Carta(Numero.Siete, new Trebol());
-        assert mov.esSiguiente(new Corazon(), Numero.Dos, carta);
+        Carta carta  = new Carta(Numero.SIETE, Palo.TREBOL);
+        assert mov.esSiguiente(Palo.CORAZON, Numero.DOS, carta);
     }
 
     public void testMovimientoLibreCumpleTres() {
         Movimiento mov = new MovimientoLibre();
-        Carta carta  = new Carta(Numero.Ocho, new Diamante());
-        assert mov.esSiguiente(new Corazon(), Numero.Ocho, carta);
+        Carta carta  = new Carta(Numero.OCHO, Palo.DIAMANTE);
+        assert mov.esSiguiente(Palo.CORAZON, Numero.OCHO, carta);
     }
 
-    //No testeamos los movimientos a Mazo porque los consideramos todos válidos
     public void testMoverAColumnaValido(){
 
         Movimiento movimientoATestear = new MovimientoLibre();
@@ -40,20 +38,20 @@ public class MovimientoLibreTest extends TestCase {
         ArrayList<Carta> cartasOrigen = new ArrayList<>();
         ArrayList<Carta> cartasDestino = new ArrayList<>();
 
-        Carta carta = new Carta(Numero.Dos, new Pica());
+        Carta carta = new Carta(Numero.DOS, Palo.PICA, true);
         cartasOrigen.add(carta);
-        carta = new Carta(Numero.Seis, new Pica());
+        carta = new Carta(Numero.SEIS, Palo.PICA, true);
         cartasOrigen.add(carta);
-        carta = new Carta(Numero.J, new Corazon());
+        carta = new Carta(Numero.J, Palo.CORAZON, true);
         cartasOrigen.add(carta);
-        carta = new Carta(Numero.Q, new Corazon());
+        carta = new Carta(Numero.Q, Palo.CORAZON, true);
         cartasOrigen.add(carta);
 
         pilonOrigen.setCartas(cartasOrigen);
 
-        carta = new Carta(Numero.Dos, new Pica());
+        carta = new Carta(Numero.DOS, Palo.PICA, true);
         cartasDestino.add(carta);
-        carta = new Carta(Numero.Cinco, new Corazon());
+        carta = new Carta(Numero.CINCO, Palo.CORAZON, true);
         cartasDestino.add(carta);
 
         pilonDestino.setCartas(cartasDestino);
@@ -72,20 +70,20 @@ public class MovimientoLibreTest extends TestCase {
         ArrayList<Carta> cartasOrigen = new ArrayList<>();
         ArrayList<Carta> cartasDestino = new ArrayList<>();
 
-        Carta carta = new Carta(Numero.Dos, new Pica());
+        Carta carta = new Carta(Numero.DOS, Palo.PICA, true);
         cartasOrigen.add(carta);
-        carta = new Carta(Numero.Seis, new Pica());
+        carta = new Carta(Numero.SEIS, Palo.PICA, true);
         cartasOrigen.add(carta);
-        carta = new Carta(Numero.J, new Trebol());
+        carta = new Carta(Numero.J, Palo.TREBOL, true);
         cartasOrigen.add(carta);
-        carta = new Carta(Numero.Seis, new Corazon());
+        carta = new Carta(Numero.SEIS, Palo.CORAZON, true);
         cartasOrigen.add(carta);
 
         pilonOrigen.setCartas(cartasOrigen);
 
-        carta = new Carta(Numero.Seis, new Pica());
+        carta = new Carta(Numero.SEIS, Palo.PICA, true);
         cartasDestino.add(carta);
-        carta = new Carta(Numero.Seis, new Trebol());
+        carta = new Carta(Numero.SEIS,Palo.TREBOL, true);
         cartasDestino.add(carta);
 
         pilonDestino.setCartas(cartasDestino);

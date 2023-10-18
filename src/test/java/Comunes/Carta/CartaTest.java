@@ -1,6 +1,5 @@
 package Comunes.Carta;
 
-import Comunes.Palo.Corazon;
 import junit.framework.TestCase;
 
 public class CartaTest extends TestCase {
@@ -9,60 +8,55 @@ public class CartaTest extends TestCase {
         // testeo que una carta se crea con el estado inicial correcto
 
         //Arrange
-        Carta carta = new Carta(Numero.As, new Corazon());
-        String estadoEsperado = "Boca Abajo";
-        Numero numeroEsperado = Numero.As;
+        Carta carta = new Carta(Numero.AS, Palo.CORAZON, true);
+        boolean estadoEsperado = true;
+        Numero numeroEsperado = Numero.AS;
+        Palo paloEsperado = Palo.CORAZON;
 
         //Act
 
         //Assert
-        assertEquals(estadoEsperado, carta.getState());
-        assertTrue(carta.getPalo().igualPalo(new Corazon()));
-        assertEquals (carta.getNumero().ordinal(), (numeroEsperado.ordinal()));
+        assertEquals(estadoEsperado, carta.isBocaArriba());
+        assertEquals(paloEsperado, carta.getPalo());
+        assertEquals(numeroEsperado, carta.getNumero());
     }
 
-    public void testCambiosDeEstado() {
-        // testeo que una carta cambia de estado al recibir ciertos mensajes
+    public void testSetEstado() {
+        // testeo que una carta cambia de estado al recibir el mensaje
 
         //Arrange
-        Carta cartaA = new Carta(Numero.As, new Corazon());
-        Carta cartaB = new Carta(Numero.As, new Corazon());
-        Carta cartaC = new Carta(Numero.As, new Corazon());
-        Carta cartaD = new Carta(Numero.As, new Corazon());
-        cartaD.cambiarState(new CartaBocaArribaState(cartaD));
-        Carta cartaE = new Carta(Numero.As, new Corazon(), new CartaBocaArribaState(cartaA));
-        Carta cartaF = new Carta(Numero.As, new Corazon(), new CartaBocaArribaState(cartaA));
-        String estadoEsperadoA = "Boca Abajo";
-        String estadoEsperadoB = "Boca Arriba";
-        String estadoEsperadoC = "Boca Arriba";
-        String estadoEsperadoD = "Boca Abajo";
-        String estadoEsperadoE = "Boca Arriba";
-        String estadoEsperadoF = "Boca Arriba";
+        Carta cartaA = new Carta(Numero.AS, Palo.CORAZON, true);
+        Carta cartaB = new Carta(Numero.AS, Palo.CORAZON, false);
+        boolean estadoEsperadoA = false;
+        boolean estadoEsperadoB = true;
 
         //Act
-        cartaA.traerAlMazo();
-        String estadoResultadoA = cartaA.getState();
-        cartaB.ultimaPilon();
-        String estadoResultadoB = cartaB.getState();
-        cartaC.pedirDelMazo();
-        String estadoResultadoC = cartaC.getState();
-        cartaD.traerAlMazo();
-        String estadoResultadoD = cartaD.getState();
-        cartaE.ultimaPilon();
-        String estadoResultadoE = cartaE.getState();
-        cartaF.pedirDelMazo();
-        String estadoResultadoF = cartaF.getState();
+        cartaA.setBocaArriba(false);
+        boolean estadoResultadoA = cartaA.isBocaArriba();
+        cartaB.setBocaArriba(true);
+        boolean estadoResultadoB = cartaB.isBocaArriba();
 
         //Assert
         assertEquals(estadoEsperadoA, estadoResultadoA);
         assertEquals(estadoEsperadoB, estadoResultadoB);
-        assertEquals(estadoEsperadoC, estadoResultadoC);
-        assertEquals(estadoEsperadoD, estadoResultadoD);
-        assertEquals(estadoEsperadoE, estadoResultadoE);
-        assertEquals(estadoEsperadoF, estadoResultadoF);
-
     }
 
+    public void testCartaIguales() {
+        // testeo que una carta cambia de estado al recibir el mensaje
+
+        //Arrange
+        Carta cartaA = new Carta(Numero.AS, Palo.CORAZON);
+        Carta cartaB = new Carta(Numero.AS, Palo.CORAZON);
+        Carta cartaC = new Carta(Numero.AS, Palo.DIAMANTE);
+        boolean estadoEsperado = true;
+
+        //Act
+
+        //Assert
+        assertTrue("", cartaA.equals(cartaB.getPalo(), cartaB.getNumero()));
+        assertFalse("", cartaA.equals(cartaC.getPalo(), cartaC.getNumero()));
+        assertFalse("", cartaA.equals(cartaC));
+    }
 }
 
 

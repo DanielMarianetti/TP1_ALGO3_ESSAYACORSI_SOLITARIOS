@@ -1,16 +1,16 @@
 package Comunes.Carta;
 
 public enum Numero {
-    As,
-    Dos,
-    Tres,
-    Cuatro,
-    Cinco,
-    Seis,
-    Siete,
-    Ocho,
-    Nueve,
-    Diez,
+    AS,
+    DOS,
+    TRES,
+    CUATRO,
+    CINCO,
+    SEIS,
+    SIETE,
+    OCHO,
+    NUEVE,
+    DIEZ,
     J,
     Q,
     K

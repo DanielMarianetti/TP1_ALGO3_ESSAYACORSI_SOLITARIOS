@@ -37,11 +37,9 @@ public abstract class Pilon {
         this.movimiento.mover(altura,this, pilonDestino);
     }
 
-    public abstract boolean recibirCartas(List<Carta> cartasAgregar);
+    public abstract void recibirCartas(List<Carta> cartasAgregar);
 
-    //public abstract void recibirCarta(Carta carta);
 
     public abstract List<Carta> sacarPilon(int i);
 
-    public abstract boolean cumpleCon(Movimiento movimientoControl, int cantidadSecuencia);
 }

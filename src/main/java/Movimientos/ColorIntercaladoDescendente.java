@@ -1,54 +1,60 @@
 package Movimientos;
 
 import Comunes.Carta.Carta;
-import Comunes.Carta.CartaBocaArribaState;
 import Comunes.Carta.Numero;
-import Comunes.Palo.Palo;
+import Comunes.Carta.Palo;
 import Comunes.Pilon.Pilon;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ColorIntercaladoDescendente implements Movimiento{
 
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {
         List<Carta> cartasOrigen = pilonOrigen.sacarPilon(altura);
-        if(cartasOrigen == null)
+        if(cartasOrigen == null) {
             return;
+        }
 
-        //Debemos devolver las cartas al pilon del que la sacamos en caso que el
-        // destino no pueda recibir las cartas
-        if(!pilonDestino.recibirCartas(cartasOrigen)){
-            Movimiento actual = pilonOrigen.getMovimiento();
-            pilonOrigen.setMovimiento(new MovimientoLibre());
+        Carta cartaDestino = pilonDestino.getUltimaCarta();
+        Carta cartaOrigen = cartasOrigen.get(0);
+
+        if (esSiguiente(cartaOrigen.getPalo(), cartaOrigen.getNumero(), cartaDestino)) {
+            pilonDestino.recibirCartas(cartasOrigen);
+        } else {
             pilonOrigen.recibirCartas(cartasOrigen);
-            pilonOrigen.setMovimiento(actual);
         }
     }
 
-    public boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear) {
-        ArrayList<Carta> siguientes = new ArrayList<>();
+    public boolean esSiguiente(Palo palo, Numero numero, Carta cartaSiguiente) {
 
-        if(numero == Numero.As)
+        if ((numero == Numero.K & cartaSiguiente == null)) {
+            return true;
+        } else if (numero == Numero.K) {
             return false;
+        } else if (cartaSiguiente == null) {
+            return false;
+        }
 
         int ordinal = numero.ordinal();
-        Numero numeroSiguiente = Numero.values()[ordinal - 1];
+        Numero numeroSiguiente = Numero.values()[ordinal + 1];
+        String colorSiguiente = palo.color;
+        List<Carta> cartasPosibles = new ArrayList<>();
 
-        ArrayList<Palo> palosPosibles = palo.obtenerOtroColor();
-        for (Palo paloPosible:
-             palosPosibles) {
-            Carta siguiente = new Carta(numeroSiguiente, paloPosible);
-            siguiente.cambiarState(new CartaBocaArribaState(siguiente));
-            siguientes.add(siguiente);
+        for (Palo paloPosible : Palo.values()) {
+            if (!Objects.equals(paloPosible.color, colorSiguiente)) {
+                cartasPosibles.add(new Carta(numeroSiguiente, paloPosible));
+            }
         }
 
-        for(Carta posibleSiguiente : siguientes){
-            if(posibleSiguiente.equals(cartaChequear))
+        for(Carta posibleSiguiente : cartasPosibles){
+            if(posibleSiguiente.equals(cartaSiguiente)) {
                 return true;
+            }
         }
-
         return false;
+
     }
 }
