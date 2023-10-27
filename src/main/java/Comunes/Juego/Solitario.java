@@ -86,6 +86,8 @@ public abstract class Solitario implements Serializable {
 
     public static Solitario deserializar(InputStream is) throws IOException, ClassNotFoundException {
         ObjectInputStream objectInputStream = new ObjectInputStream(is);
-        return (Solitario) objectInputStream.readObject();
+        Solitario retorno = (Solitario) objectInputStream.readObject();
+        is.close();
+        return retorno;
     }
 }

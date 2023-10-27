@@ -53,8 +53,7 @@ public class CartaTest extends TestCase {
         //Act
 
         //Assert
-        assertTrue("", cartaA.equals(cartaB.getPalo(), cartaB.getNumero()));
-        assertFalse("", cartaA.equals(cartaC.getPalo(), cartaC.getNumero()));
+        assertTrue("", cartaA.equals(cartaB));
         assertFalse("", cartaA.equals(cartaC));
     }
 }

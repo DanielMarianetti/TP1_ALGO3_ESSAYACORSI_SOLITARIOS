@@ -24,7 +24,7 @@ public class Carta implements Serializable {
         return otraCarta.equals(this.palo, this.numero);
     }
 
-    public boolean equals(Palo otroPalo, Numero otroNumero){
+    private boolean equals(Palo otroPalo, Numero otroNumero){
         return this.getPalo() == otroPalo && this.getNumero() == otroNumero;
     }
 

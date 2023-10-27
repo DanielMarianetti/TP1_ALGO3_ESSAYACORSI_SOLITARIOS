@@ -30,12 +30,9 @@ public class ColorIntercaladoDescendente implements Movimiento, Serializable {
     }
 
     public boolean esSiguiente(Palo palo, Numero numero, Carta cartaSiguiente) {
-
         if ((numero == Numero.K & cartaSiguiente == null)) {
             return true;
         } else if (numero == Numero.K) {
-            return false;
-        } else if (cartaSiguiente == null) {
             return false;
         }
 
