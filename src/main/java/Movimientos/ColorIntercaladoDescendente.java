@@ -5,11 +5,12 @@ import Comunes.Carta.Numero;
 import Comunes.Carta.Palo;
 import Comunes.Pilon.Pilon;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class ColorIntercaladoDescendente implements Movimiento{
+public class ColorIntercaladoDescendente implements Movimiento, Serializable {
 
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {

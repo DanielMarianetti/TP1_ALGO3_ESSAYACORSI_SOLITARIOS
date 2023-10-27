@@ -1,6 +1,8 @@
 package Comunes.Carta;
 
-public class Carta {
+import java.io.Serializable;
+
+public class Carta implements Serializable {
 
     private boolean bocaArriba;
     private final Numero numero;

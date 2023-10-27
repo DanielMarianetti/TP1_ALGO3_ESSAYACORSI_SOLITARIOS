@@ -1,6 +1,8 @@
 package Comunes.Carta;
 
-public enum Numero {
+import java.io.Serializable;
+
+public enum Numero implements Serializable {
     AS,
     DOS,
     TRES,

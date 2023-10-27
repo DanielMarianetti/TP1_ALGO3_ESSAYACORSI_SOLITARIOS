@@ -1,6 +1,8 @@
 package Comunes.Carta;
 
-public enum Palo {
+import java.io.Serializable;
+
+public enum Palo implements Serializable {
     CORAZON("Rojo"),
     DIAMANTE("Rojo"),
     PICA("Negro"),

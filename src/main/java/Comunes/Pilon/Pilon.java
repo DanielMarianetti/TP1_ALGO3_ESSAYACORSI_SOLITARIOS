@@ -2,9 +2,11 @@ package Comunes.Pilon;
 
 import Comunes.Carta.Carta;
 import Movimientos.Movimiento;
+
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Pilon {
+public abstract class Pilon implements Serializable {
 
     public Movimiento movimiento;
 

@@ -2,9 +2,10 @@ package Objetivos;
 
 import Comunes.Pilon.Pilon;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class PilonEnteroMismoPaloAsc implements Objetivo {
+public class PilonEnteroMismoPaloAsc implements Objetivo, Serializable {
 
     @Override
     public boolean cumplido(Pilon foundation) {

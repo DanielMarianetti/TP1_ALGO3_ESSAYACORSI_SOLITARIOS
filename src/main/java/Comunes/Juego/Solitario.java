@@ -3,10 +3,12 @@ package Comunes.Juego;
 import Comunes.Pilon.Mazo;
 import Comunes.Pilon.Pilon;
 import Movimientos.*;
+
+import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
 
-public abstract class Solitario {
+public abstract class Solitario implements Serializable {
 
     public List<Pilon> tableau;
     public Pilon mazo;
@@ -51,7 +53,7 @@ public abstract class Solitario {
 
     public void movimientoLibre(int columna) {
         if (!this.juegoComenzado) {
-            this.mazo.mover(this.mazo.cantidadCartas()-1, this.tableau.get(columna));
+            this.mazo.mover(this.mazo.cantidadCartas() - 1, this.tableau.get(columna));
             this.tableau.get(columna).getUltimaCarta().setBocaArriba(true);
         }
     }
@@ -74,6 +76,16 @@ public abstract class Solitario {
 
     public abstract void moverPilonAFoundation(int columnaOrigen, int altura, int foundationDestino);
 
-    public abstract void moverFoundationAPilon(int foundationOrigen, int altura,  int columnaDestino);
+    public abstract void moverFoundationAPilon(int foundationOrigen, int altura, int columnaDestino);
 
+    public void serializar(OutputStream os) throws IOException {
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(os);
+        objectOutputStream.writeObject(this);
+        objectOutputStream.flush();
+    }
+
+    public static Solitario deserializar(InputStream is) throws IOException, ClassNotFoundException {
+        ObjectInputStream objectInputStream = new ObjectInputStream(is);
+        return (Solitario) objectInputStream.readObject();
+    }
 }
