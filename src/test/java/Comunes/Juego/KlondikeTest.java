@@ -3,10 +3,9 @@ package Comunes.Juego;
 import Comunes.Carta.Carta;
 import Comunes.Carta.Numero;
 import Comunes.Carta.Palo;
-import Comunes.Pilon.Pilon;
 import junit.framework.TestCase;
 
-public class SolitarioTest extends TestCase {
+public class KlondikeTest extends TestCase {
 
     public void testCrearSolitarioOrdenado() {
         Solitario s = new Klondike();
@@ -104,7 +103,6 @@ public class SolitarioTest extends TestCase {
     public  void testMovimientoPilon() {
         Solitario s = new Klondike();
         s.iniciarOrdenado();
-
         s.movimientoLibre(0);
 
         for (int i = 1; i < 12; i++) {

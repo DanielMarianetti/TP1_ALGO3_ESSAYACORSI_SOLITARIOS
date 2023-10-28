@@ -2,42 +2,41 @@ package Movimientos;
 
 import Comunes.Carta.Carta;
 import Comunes.Carta.Numero;
-
 import Comunes.Carta.Palo;
 import Comunes.Pilon.Columna;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
 
-public class ColorIntercaladoDescendenteTest extends TestCase {
+public class MismoPaloDescendenteTest extends TestCase {
 
     public void testSiguienteQueCumple() {
-        Movimiento mov = new ColorIntercaladoDescendente();
+        Movimiento mov = new MismoPaloDescendente();
         Carta cartaSig  = new Carta(Numero.SIETE, Palo.DIAMANTE);
-        assert mov.esSiguiente(Palo.PICA, Numero.OCHO, cartaSig);
+        assert mov.esSiguiente(Palo.DIAMANTE, Numero.OCHO, cartaSig);
     }
 
     public void testSiguienteQueCumpleDos() {
-        Movimiento mov = new ColorIntercaladoDescendente();
+        Movimiento mov = new MismoPaloDescendente();
         Carta cartaSig  = new Carta(Numero.NUEVE, Palo.TREBOL);
-        assert mov.esSiguiente(Palo.CORAZON, Numero.DIEZ, cartaSig);
+        assert mov.esSiguiente(Palo.TREBOL, Numero.DIEZ, cartaSig);
     }
 
     public void testSiguienteQueNoCumplePorPalo() {
-        Movimiento mov = new ColorIntercaladoDescendente();
+        Movimiento mov = new MismoPaloDescendente();
         Carta cartaSig  = new Carta(Numero.J, Palo.DIAMANTE);
-        assertFalse(mov.esSiguiente(Palo.CORAZON, Numero.Q, cartaSig));
+        assertFalse(mov.esSiguiente(Palo.PICA, Numero.Q, cartaSig));
     }
 
     public void testSiguienteQueNoCumplePorNumero() {
-        Movimiento mov = new ColorIntercaladoDescendente();
+        Movimiento mov = new MismoPaloDescendente();
         Carta cartaSig  = new Carta(Numero.Q, Palo.TREBOL);
-        assertFalse(mov.esSiguiente(Palo.CORAZON, Numero.Q, cartaSig));
+        assertFalse(mov.esSiguiente(Palo.TREBOL, Numero.Q, cartaSig));
     }
 
     public void testMoverAColumnaValido(){
 
-        Movimiento movimientoATestear = new ColorIntercaladoDescendente();
+        Movimiento movimientoATestear = new MismoPaloDescendente();
         Columna pilonOrigen = new Columna(movimientoATestear);
         Columna pilonDestino = new Columna(movimientoATestear);
 
@@ -50,7 +49,7 @@ public class ColorIntercaladoDescendenteTest extends TestCase {
         cartasOrigen.add(carta);
         carta = new Carta(Numero.TRES, Palo.PICA, true);
         cartasOrigen.add(carta);
-        carta = new Carta(Numero.CUATRO, Palo.CORAZON, true);
+        carta = new Carta(Numero.CUATRO, Palo.TREBOL, true);
         cartasOrigen.add(carta);
 
         pilonOrigen.setCartas(cartasOrigen);
@@ -69,7 +68,7 @@ public class ColorIntercaladoDescendenteTest extends TestCase {
     }
 
     public void testMoverEsInvalidoPorDestinoQueNoAcepta(){
-        Movimiento movimientoATestear = new ColorIntercaladoDescendente();
+        Movimiento movimientoATestear = new MismoPaloDescendente();
         Columna pilonOrigen = new Columna(movimientoATestear);
         Columna pilonDestino = new Columna(movimientoATestear);
 
@@ -101,7 +100,7 @@ public class ColorIntercaladoDescendenteTest extends TestCase {
     }
 
     public void testMoverEsInvalidoPorNoPoderSacarLasCartas(){
-        Movimiento movimientoATestear = new ColorIntercaladoDescendente();
+        Movimiento movimientoATestear = new MismoPaloDescendente();
         Columna pilonOrigen = new Columna(movimientoATestear);
         Columna pilonDestino = new Columna(movimientoATestear);
 
@@ -132,9 +131,9 @@ public class ColorIntercaladoDescendenteTest extends TestCase {
         assertEquals(2, pilonDestino.cantidadCartas());
     }
 
-    public void testMoverKAVacio(){
+    public void testMoverAVacio(){
 
-        Movimiento movimientoATestear = new ColorIntercaladoDescendente();
+        Movimiento movimientoATestear = new MismoPaloDescendente();
         Columna pilonOrigen = new Columna(movimientoATestear);
         Columna pilonDestino = new Columna(movimientoATestear);
 
@@ -159,7 +158,7 @@ public class ColorIntercaladoDescendenteTest extends TestCase {
 
     public void testMoverVariasCartas(){
 
-        Movimiento movimientoATestear = new ColorIntercaladoDescendente();
+        Movimiento movimientoATestear = new MismoPaloDescendente();
         Columna pilonOrigen = new Columna(movimientoATestear);
         Columna pilonDestino = new Columna(movimientoATestear);
 
@@ -170,7 +169,7 @@ public class ColorIntercaladoDescendenteTest extends TestCase {
         cartasOrigen.add(carta);
         carta = new Carta(Numero.SEIS, Palo.PICA, true);
         cartasOrigen.add(carta);
-        carta = new Carta(Numero.CUATRO, Palo.CORAZON, true);
+        carta = new Carta(Numero.CUATRO, Palo.PICA, true);
         cartasOrigen.add(carta);
         carta = new Carta(Numero.TRES, Palo.PICA, true);
         cartasOrigen.add(carta);
@@ -179,7 +178,7 @@ public class ColorIntercaladoDescendenteTest extends TestCase {
 
         carta = new Carta(Numero.DOS, Palo.PICA, true);
         cartasDestino.add(carta);
-        carta = new Carta(Numero.CINCO, Palo.TREBOL, true);
+        carta = new Carta(Numero.CINCO, Palo.PICA, true);
         cartasDestino.add(carta);
 
         pilonDestino.setCartas(cartasDestino);

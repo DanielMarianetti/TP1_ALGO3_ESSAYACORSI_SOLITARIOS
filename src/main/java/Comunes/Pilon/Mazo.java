@@ -39,7 +39,7 @@ public class Mazo extends Pilon{
         }
     }
 
-    private void mezclar() {
+    protected void mezclar() {
         Collections.shuffle(this.mazo);
     }
 

@@ -20,7 +20,11 @@ public class MismoPaloAscendente implements Movimiento{
         Carta cartaDestino = pilonDestino.getUltimaCarta();
         Carta cartaOrigen = cartasOrigen.get(0);
 
-        if (esSiguiente(cartaOrigen.getPalo(), cartaOrigen.getNumero(), cartaDestino)) {
+        if ((cartaDestino == null & cartaOrigen.getNumero() == Numero.AS)) {
+            pilonDestino.recibirCartas(cartasOrigen);
+        } else if (cartaDestino == null || cartasOrigen.size() > 1) {
+            pilonOrigen.recibirCartas(cartasOrigen);
+        }else if (esSiguiente(cartaDestino.getPalo(), cartaDestino.getNumero(), cartaOrigen)) {
             pilonDestino.recibirCartas(cartasOrigen);
         } else {
             pilonOrigen.recibirCartas(cartasOrigen);
@@ -29,13 +33,10 @@ public class MismoPaloAscendente implements Movimiento{
 
     @Override
     public boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear){
-        if (cartaChequear == null & numero == Numero.AS) {
-            return true;
-        } else if (cartaChequear == null & numero != Numero.AS) {
+        if (numero == Numero.K) {
             return false;
         }
-
-        Numero numeroSiguiente = Numero.values()[numero.ordinal() - 1];
+        Numero numeroSiguiente = Numero.values()[numero.ordinal() + 1];
         Carta cartaSiguiente = new Carta(numeroSiguiente, palo, true);
         return cartaSiguiente.equals(cartaChequear);
     }
