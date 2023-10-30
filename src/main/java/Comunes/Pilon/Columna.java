@@ -70,23 +70,23 @@ public class Columna extends Pilon {
         boolean validado;
         List<Carta> cartas = new ArrayList<>();
 
-        if (cantidadCartas() == 1) {
-            cartas.add(this.columna.remove(0));
+        if (cantidadCartas() == 1 || indice == this.cantidadCartas() - 1) {
+            cartas.add(this.columna.remove( indice));
             return cartas;
         }
 
-        Carta cartaInicial = this.getCarta(indice);
-        cartas.add(cartaInicial);
-
-        for (int i = cantidadCartas()-1; i > indice; i--) {
+        for (int i = indice; i < this.cantidadCartas() - 1; i++) {
             Carta cartaActual = this.getCarta(i);
-            Carta cartaSiguiente = this.getCarta(i-1);
+            Carta cartaSiguiente = this.getCarta(i+1);
+
             validado = this.movimiento.esSiguiente(cartaActual.getPalo(), cartaActual.getNumero(), cartaSiguiente);
             if (!validado) {
                 return null;
             }
             cartas.add(cartaActual);
         }
+
+        cartas.add(this.getUltimaCarta());
 
         List<Carta> cartasEliminar = columna.subList(indice, columna.size());
         columna.removeAll(cartasEliminar);

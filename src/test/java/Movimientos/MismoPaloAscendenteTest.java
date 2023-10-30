@@ -13,19 +13,19 @@ public class MismoPaloAscendenteTest extends TestCase {
     public void testSiguienteQueCumple() {
         Movimiento mov = new MismoPaloAscendente();
         Carta cartaSig  = new Carta(Numero.NUEVE, Palo.TREBOL);
-        assert mov.esSiguiente(Palo.TREBOL, Numero.DIEZ, cartaSig);
+        assert mov.esSiguiente(Palo.TREBOL, Numero.OCHO, cartaSig);
     }
 
     public void testSiguienteQueCumpleDos() {
         Movimiento mov = new MismoPaloAscendente();
         Carta cartaSig  = new Carta(Numero.Q, Palo.PICA);
-        assert mov.esSiguiente(Palo.PICA, Numero.K, cartaSig);
+        assert mov.esSiguiente(Palo.PICA, Numero.J, cartaSig);
     }
 
     public void testSiguienteQueNoCumplePorPalo() {
         Movimiento mov = new MismoPaloAscendente();
         Carta cartaSig  = new Carta(Numero.Q, Palo.DIAMANTE);
-        assertFalse(mov.esSiguiente(Palo.CORAZON, Numero.K, cartaSig));
+        assertFalse(mov.esSiguiente(Palo.CORAZON, Numero.J, cartaSig));
     }
 
     public void testSiguienteQueNoCumplePorNumero() {
@@ -95,8 +95,8 @@ public class MismoPaloAscendenteTest extends TestCase {
 
         movimientoATestear.mover(2, pilonOrigen, pilonDestino);
 
-        assertEquals(pilonOrigen.cantidadCartas(), 4);
-        assertEquals(pilonDestino.cantidadCartas(), 2);
+        assertEquals(4, pilonOrigen.cantidadCartas());
+        assertEquals(2, pilonDestino.cantidadCartas());
     }
 
     public void testMoverEsInvalidoPorNoPoderSacarLasCartas(){

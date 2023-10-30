@@ -5,10 +5,9 @@ import Comunes.Carta.Numero;
 import Comunes.Carta.Palo;
 import Comunes.Pilon.Pilon;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class MismoPaloAscendente implements Movimiento, Serializable {
+public class MismoPaloDescendente implements Movimiento {
 
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {
@@ -21,24 +20,23 @@ public class MismoPaloAscendente implements Movimiento, Serializable {
         Carta cartaDestino = pilonDestino.getUltimaCarta();
         Carta cartaOrigen = cartasOrigen.get(0);
 
-        if ((cartaDestino == null & cartaOrigen.getNumero() == Numero.AS)) {
+        if (cartaDestino == null) {
             pilonDestino.recibirCartas(cartasOrigen);
-        } else if (cartaDestino == null || cartasOrigen.size() > 1) {
-            pilonOrigen.recibirCartas(cartasOrigen);
-        }else if (esSiguiente(cartaDestino.getPalo(), cartaDestino.getNumero(), cartaOrigen)) {
+        } else if (esSiguiente(cartaDestino.getPalo(), cartaDestino.getNumero(), cartaOrigen)) {
             pilonDestino.recibirCartas(cartasOrigen);
         } else {
             pilonOrigen.recibirCartas(cartasOrigen);
         }
     }
 
-    @Override
-    public boolean esSiguiente(Palo palo, Numero numero, Carta cartaChequear){
-        if (numero == Numero.K) {
+    public boolean esSiguiente(Palo palo, Numero numero, Carta cartaSiguiente) {
+        if (numero == Numero.AS) {
             return false;
         }
-        Numero numeroSiguiente = Numero.values()[numero.ordinal() + 1];
-        Carta cartaSiguiente = new Carta(numeroSiguiente, palo, true);
-        return cartaSiguiente.equals(cartaChequear);
+        int ordinal = numero.ordinal();
+        Numero numeroSiguiente = Numero.values()[ordinal - 1];
+        Carta posibleSiguiente = new Carta(numeroSiguiente, palo);
+        return posibleSiguiente.equals(cartaSiguiente);
     }
+
 }

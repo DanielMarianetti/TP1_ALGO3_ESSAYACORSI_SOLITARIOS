@@ -22,7 +22,11 @@ public class ColorIntercaladoDescendente implements Movimiento, Serializable {
         Carta cartaDestino = pilonDestino.getUltimaCarta();
         Carta cartaOrigen = cartasOrigen.get(0);
 
-        if (esSiguiente(cartaOrigen.getPalo(), cartaOrigen.getNumero(), cartaDestino)) {
+        if (cartaDestino == null & cartaOrigen.getNumero() == Numero.K) {
+            pilonDestino.recibirCartas(cartasOrigen);
+        } else if (cartaDestino == null) {
+            pilonOrigen.recibirCartas(cartasOrigen);
+        } else if (esSiguiente(cartaDestino.getPalo(), cartaDestino.getNumero(), cartaOrigen)) {
             pilonDestino.recibirCartas(cartasOrigen);
         } else {
             pilonOrigen.recibirCartas(cartasOrigen);
@@ -30,14 +34,14 @@ public class ColorIntercaladoDescendente implements Movimiento, Serializable {
     }
 
     public boolean esSiguiente(Palo palo, Numero numero, Carta cartaSiguiente) {
-        if ((numero == Numero.K & cartaSiguiente == null)) {
-            return true;
-        } else if (numero == Numero.K) {
-            return false;
-        }
+        // if ((numero == Numero.K & cartaSiguiente == null)) {
+        //     return true;
+        // } else if (numero == Numero.K) {
+        //     return false;
+        // }
 
         int ordinal = numero.ordinal();
-        Numero numeroSiguiente = Numero.values()[ordinal + 1];
+        Numero numeroSiguiente = Numero.values()[ordinal - 1];
         String colorSiguiente = palo.color;
         List<Carta> cartasPosibles = new ArrayList<>();
 
@@ -53,6 +57,5 @@ public class ColorIntercaladoDescendente implements Movimiento, Serializable {
             }
         }
         return false;
-
     }
 }

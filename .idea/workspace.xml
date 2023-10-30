@@ -17,6 +17,14 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Movimientos/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Movimientos/Movimiento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Comunes/Carta/CartaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Comunes/Carta/CartaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Persistencia/PersistenciaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Columna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Columna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Mazo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Mazo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Movimientos/ColorIntercaladoDescendente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Movimientos/ColorIntercaladoDescendente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Movimientos/MismoPaloAscendente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Movimientos/MismoPaloAscendente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Comunes/Juego/SolitarioTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Movimientos/ColorIntercaladoDescendenteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Movimientos/ColorIntercaladoDescendenteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Movimientos/MismoPaloAscendenteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Movimientos/MismoPaloAscendenteTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +37,14 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="dev-tests" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,8 +72,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
-  }
-}]]></component>
+]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Movimientos" />
@@ -79,6 +87,7 @@
       <recent name="Comunes.Persistencia" />
       <recent name="Objetivos" />
       <recent name="Comunes.Juego" />
+      <recent name="Objetivos" />
       <recent name="Movimientos" />
       <recent name="Comunes.Carta" />
     </key>
@@ -106,6 +115,18 @@
       <option name="PACKAGE_NAME" value="Comunes.Persistencia" />
       <option name="MAIN_CLASS_NAME" value="Comunes.Persistencia.SolitarioPersistidorTest" />
       <option name="METHOD_NAME" value="testAbrirArchivoQueNoExisteArrojaExcepcion" />
+  <component name="RunManager" selected="JUnit.java in TPSolitarios">
+    <configuration name="KlondikeTest.testJuegoGanado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Juego.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Juego" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Juego.KlondikeTest" />
+      <option name="METHOD_NAME" value="testJuegoGanado" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,6 +143,49 @@
       <option name="PACKAGE_NAME" value="Comunes.Persistencia" />
       <option name="MAIN_CLASS_NAME" value="Comunes.Persistencia.SolitarioPersistidorTest" />
       <option name="METHOD_NAME" value="testCargarUnSolitarioDespuesDeGuardarMantieneEstado" />
+    <configuration name="SpiderTest.testJuegoGanado" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Juego.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Juego" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Juego.SpiderTest" />
+      <option name="METHOD_NAME" value="testJuegoGanado" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpiderTest.testMovimientoLibre" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Juego.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Juego" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Juego.SpiderTest" />
+      <option name="METHOD_NAME" value="testMovimientoLibre" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpiderTest.testMovimientoPilon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TPSolitarios" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Comunes.Juego.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Comunes.Juego" />
+      <option name="MAIN_CLASS_NAME" value="Comunes.Juego.SpiderTest" />
+      <option name="METHOD_NAME" value="testMovimientoPilon" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,6 +230,11 @@
         <item itemvalue="JUnit.SolitarioPersistidorTest.testCargarUnSolitarioDespuesDeGuardarMantieneEstado" />
         <item itemvalue="JUnit.SolitarioPersistidorTest.testAbrirArchivoQueNoExisteArrojaExcepcion" />
         <item itemvalue="JUnit.SolitarioPersistidorTest.testLoadState" />
+        <item itemvalue="JUnit.java in TPSolitarios" />
+        <item itemvalue="JUnit.SpiderTest.testJuegoGanado" />
+        <item itemvalue="JUnit.SpiderTest.testMovimientoPilon" />
+        <item itemvalue="JUnit.KlondikeTest.testJuegoGanado" />
+        <item itemvalue="JUnit.SpiderTest.testMovimientoLibre" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +260,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev" />
+                        <option value="dev-Spider" />
                       </list>
                     </value>
                   </entry>
@@ -227,15 +296,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/Movimientos/MismoPaloAscendenteTest.java</url>
-          <line>18</line>
-          <properties class="Movimientos.MismoPaloAscendenteTest" method="testSiguienteQueCumpleDos">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/Movimientos/MismoPaloAscendenteTest.java</url>
           <line>36</line>
           <properties class="Movimientos.MismoPaloAscendenteTest" method="testMoverAColumnaValido">
             <option name="EMULATED" value="true" />
@@ -243,6 +303,19 @@
           </properties>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/Movimientos/ColorIntercaladoDescendenteTest.java</url>
+          <line>102</line>
+          <properties class="Movimientos.ColorIntercaladoDescendenteTest" method="testMoverEsInvalidoPorNoPoderSacarLasCartas">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="junit.framework.AssertionFailedError" package="junit.framework" />
+          <option name="timeStamp" value="21" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -275,6 +348,14 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$CartaTest_testCartaEnEstadoInicial.ic" NAME="CartaTest.testCartaEnEstadoInicial Coverage Results" MODIFIED="1696291704993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Comunes.Carta.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$Comunes_in_TPSolitarios.ic" NAME="Comunes in TPSolitarios Coverage Results" MODIFIED="1697573194800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$MazoTest.ic" NAME="MazoTest Coverage Results" MODIFIED="1697508165003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Comunes.Pilon.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$java_in_TPSolitarios.ic" NAME="java in TPSolitarios Coverage Results" MODIFIED="1698463427148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$MovimientoLibreTest.ic" NAME="MovimientoLibreTest Coverage Results" MODIFIED="1697511638465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Movimientos.*</FILTER>
     </SUITE>
   </component>
 </project>
