@@ -5,8 +5,9 @@ import Movimientos.Movimiento;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Observable;
 
-public abstract class Pilon implements Serializable {
+public abstract class Pilon extends Observable implements Serializable {
 
     public Movimiento movimiento;
 

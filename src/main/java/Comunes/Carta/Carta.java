@@ -44,4 +44,11 @@ public class Carta implements Serializable {
         return palo;
     }
 
+    public String obtenerImagenID() {
+        if(isBocaArriba())
+            return numero.toString() + palo.toString();
+        else
+            return "DORSO";
+    }
+
 }

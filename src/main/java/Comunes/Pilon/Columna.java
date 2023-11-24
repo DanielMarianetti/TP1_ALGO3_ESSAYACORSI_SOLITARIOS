@@ -59,6 +59,7 @@ public class Columna extends Pilon {
             return;
         }
         columna.addAll(cartasAgregar);
+        notifyObservers();
     }
 
     @Override
@@ -90,6 +91,7 @@ public class Columna extends Pilon {
 
         List<Carta> cartasEliminar = columna.subList(indice, columna.size());
         columna.removeAll(cartasEliminar);
+        notifyObservers();
         return cartas;
     }
 

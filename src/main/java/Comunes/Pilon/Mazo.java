@@ -73,12 +73,14 @@ public class Mazo extends Pilon{
         for(Carta carta : cartasAgregar) {
             mazo.push(carta);
         }
+        notifyObservers();
     }
 
     @Override
     public List<Carta> sacarPilon(int i) {
         List<Carta> cartas = new ArrayList<>();
         cartas.add(this.mazo.pop());
+        notifyObservers();
         return cartas;
     }
 

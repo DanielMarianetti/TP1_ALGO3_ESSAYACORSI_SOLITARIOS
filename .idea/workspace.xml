@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16fdcb84-5b4f-43da-997d-ae2e81aaff66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Handlers/InicializadorSpider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Aplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aplicacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Carta/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Carta/Carta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Columna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Columna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Mazo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Mazo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Pilon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Pilon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/BibliotecaJuegos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/BibliotecaJuegos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Handlers/InicializadorKlondike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Handlers/InicializadorKlondike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Handlers/InicializadorSpider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Handlers/InicializadorSpider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaInicial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaKlondike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaKlondike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templateKlondike.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templateKlondike.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit3 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
         <option value="Class" />
       </list>
@@ -51,8 +60,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "D:/tp_algoIII_Corsi/TP1_ALGO3_ESSAYACORSI_SOLITARIOS",
+    "git-widget-placeholder": "dev-interfaz",
+    "last_opened_file_path": "C:/Users/EC43030743/Documents/Facultad/AlgoIII_tower_defense",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -163,6 +172,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -174,6 +184,9 @@
             <option name="pomFileName" value="pom.xml" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$" />
@@ -230,11 +243,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Comunes/Juego/Klondike.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Movimientos/ColorIntercaladoDescendente.java</url>
           <line>27</line>
           <option name="timeStamp" value="22" />
@@ -288,28 +296,28 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$java_in_TPSolitarios.ic" NAME="java in TPSolitarios Coverage Results" MODIFIED="1697600292241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$Movimientos_in_TPSolitarios.ic" NAME="Movimientos in TPSolitarios Coverage Results" MODIFIED="1697517277083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$MovimientoLibreTest.ic" NAME="MovimientoLibreTest Coverage Results" MODIFIED="1697511638465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Movimientos.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$MazoTest.ic" NAME="MazoTest Coverage Results" MODIFIED="1697508165003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Comunes.Pilon.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$SolitarioTest.ic" NAME="SolitarioTest Coverage Results" MODIFIED="1697593298208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Comunes.Juego.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$Comunes_in_TPSolitarios.ic" NAME="Comunes in TPSolitarios Coverage Results" MODIFIED="1697573194800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$All_in_TPSolitarios.ic" NAME="All in TPSolitarios Coverage Results" MODIFIED="1698442091939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$ColumnaTest.ic" NAME="ColumnaTest Coverage Results" MODIFIED="1697506049942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Comunes.Pilon.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$Movimientos_in_TPSolitarios.ic" NAME="Movimientos in TPSolitarios Coverage Results" MODIFIED="1697517277083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Movimientos.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$CartaTest.ic" NAME="CartaTest Coverage Results" MODIFIED="1697500048896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Comunes.Carta.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$MovimientoLibreTest.ic" NAME="MovimientoLibreTest Coverage Results" MODIFIED="1697511638465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>Movimientos.*</FILTER>
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$MazoTest.ic" NAME="MazoTest Coverage Results" MODIFIED="1697508165003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Comunes.Pilon.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$Comunes_in_TPSolitarios.ic" NAME="Comunes in TPSolitarios Coverage Results" MODIFIED="1697573194800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$CartaTest_testCartaEnEstadoInicial.ic" NAME="CartaTest.testCartaEnEstadoInicial Coverage Results" MODIFIED="1696291704993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Comunes.Carta.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/TP1_ALGO3_ESSAYACORSI_SOLITARIOS$All_in_TPSolitarios.ic" NAME="All in TPSolitarios Coverage Results" MODIFIED="1698442091939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

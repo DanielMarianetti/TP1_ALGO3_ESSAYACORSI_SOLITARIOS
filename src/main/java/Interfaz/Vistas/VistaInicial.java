@@ -23,7 +23,7 @@ public class VistaInicial {
     public void SetVistaInicial() {
         root = new BorderPane();
 
-        Color backgroundColor = Color.rgb(28, 170, 23, 0.8);
+        Color backgroundColor = Color.rgb(28, 170, 23, 1.0);
         BackgroundFill backgroundFill = new BackgroundFill(backgroundColor, null, null);
         Background background = new Background(backgroundFill);
         root.setBackground(background);
@@ -38,6 +38,7 @@ public class VistaInicial {
         Control menu = vistaMenu.obtenerMenuBar();
 
         StackPane lienzo = new StackPane();
+        lienzo.setBackground(background);
         var bibJuegos = new BibliotecaJuegos(lienzo, this);
         var botonesJuegos = bibJuegos.getBotonesJuegos();
         VBox buttonBox = new VBox(10);

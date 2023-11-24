@@ -24,8 +24,8 @@ public class BibliotecaJuegos {
 
         List<Button> botones = new ArrayList<>();
 
-        botones.add(new InicializadorKlondike(lienzo, observer));
-        botones.add(new InicializadorSpider(lienzo, observer));
+        botones.add(new InicializadorKlondike(lienzo));
+        botones.add(new InicializadorSpider(lienzo));
 
         return botones;
     }

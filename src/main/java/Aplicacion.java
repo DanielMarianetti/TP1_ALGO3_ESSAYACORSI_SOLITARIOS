@@ -13,13 +13,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Aplicacion extends Application {
-
-
     @Override
     public void start(Stage stage) {
 
         stage.setWidth(800);
-        stage.setHeight(550);
+        stage.setHeight(600);
         stage.setResizable(false);
 
         VistaInicial vistaInicial = new VistaInicial(stage);

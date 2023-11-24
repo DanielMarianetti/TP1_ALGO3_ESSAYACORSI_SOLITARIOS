@@ -18,11 +18,8 @@ import javafx.scene.paint.Color;
 public class InicializadorKlondike extends Button {
 
     private Pane lienzo;
-    private VistaInicial observer;
-
-    public InicializadorKlondike(Pane lienzo, VistaInicial observer){
+    public InicializadorKlondike(Pane lienzo){
         this.lienzo = lienzo;
-        this.observer = observer;
         setText("Klondike");
         setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -34,10 +31,10 @@ public class InicializadorKlondike extends Button {
 
     public void handleButtonClick() {
 
-        var canvas = new Canvas();
+        //var canvas = new Canvas();
 
         Klondike juego = new Klondike();
-        VistaKlondike vista = new VistaKlondike(juego, lienzo, observer);
+        VistaKlondike vista = new VistaKlondike(juego, lienzo);
         vista.Cargar();
 
         /*resizeCanvas(canvas, lienzo.getWidth(), lienzo.getHeight());
@@ -48,7 +45,7 @@ public class InicializadorKlondike extends Button {
         lienzo.heightProperty().addListener((obs, oldVal, newVal) ->
                 resizeCanvas(canvas, lienzo.getWidth(), newVal.doubleValue()));
 */
-        lienzo.getChildren().add(canvas);
+        //lienzo.getChildren().add(canvas);
         //root.setCenter(canvas);
 
        // Scene scene = new Scene(root);

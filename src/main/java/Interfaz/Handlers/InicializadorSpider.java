@@ -18,11 +18,9 @@ import javafx.stage.Stage;
 public class InicializadorSpider extends Button {
 
     private Pane lienzo;
-    private VistaInicial observer;
-
-    public InicializadorSpider(Pane lienzo, VistaInicial observer){
+    public InicializadorSpider(Pane lienzo){
         this.lienzo = lienzo;
-        this.observer = observer;
+        setText("Spider");
         setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
