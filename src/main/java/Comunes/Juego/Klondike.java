@@ -51,7 +51,10 @@ public class Klondike extends Solitario {
 
     public void moverMazoAWaste() {
         this.mazo.mover(this.mazo.cantidadCartas()-1, this.waste);
+        System.out.println("Muevo mazo a waste");
         this.waste.getUltimaCarta().setBocaArriba(true);
+        this.mazo.notifyObservers();
+        this.waste.notifyObservers();
     }
 
     public void rearmarMazo() {
@@ -60,12 +63,16 @@ public class Klondike extends Solitario {
             this.waste.mover(this.waste.cantidadCartas()-1, this.mazo);
             this.mazo.getUltimaCarta().setBocaArriba(false);
         }
+        this.mazo.notifyObservers();
+        this.waste.notifyObservers();
     }
 
     public void moverWasteAPilon(int colunma) {
         this.waste.setMovimiento(new ColorIntercaladoDescendente());
         Pilon columnaDestino = this.tableau.get(colunma);
         this.waste.mover(this.waste.cantidadCartas()-1, columnaDestino);
+        this.waste.notifyObservers();
+        columnaDestino.notifyObservers();
     }
 
     public void moverWasteAFoundation(int foundation) {
@@ -73,6 +80,8 @@ public class Klondike extends Solitario {
         Pilon foundationDestino = this.foundation.get(foundation);
         this.waste.mover(this.waste.cantidadCartas()-1, foundationDestino);
         juegoGanado();
+        this.waste.notifyObservers();
+        foundationDestino.notifyObservers();
     }
 
     public void moverPilonAPilon(int columnaOrigen, int altura, int columnaDestino) {
@@ -83,6 +92,8 @@ public class Klondike extends Solitario {
         if (!pilonOrigen.isPilonVacio()) {
             pilonOrigen.getUltimaCarta().setBocaArriba(true);
         }
+        pilonOrigen.notifyObservers();
+        pilonDestino.notifyObservers();
     }
 
     public void moverPilonAFoundation(int columnaOrigen, int altura, int foundationDestino) {
@@ -94,6 +105,8 @@ public class Klondike extends Solitario {
         if (!pilonOrigen.isPilonVacio()) {
             pilonOrigen.getUltimaCarta().setBocaArriba(true);
         }
+        pilonOrigen.notifyObservers();
+        foundation.notifyObservers();
     }
 
     public void moverFoundationAPilon(int foundationOrigen, int altura,  int columnaDestino) {
@@ -104,6 +117,8 @@ public class Klondike extends Solitario {
         Pilon pilonOrigen = this.tableau.get(columnaDestino);
         foundation.setMovimiento(new ColorIntercaladoDescendente());
         foundation.mover(altura, pilonOrigen);
+        pilonOrigen.notifyObservers();
+        foundation.notifyObservers();
     }
 
 }

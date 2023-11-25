@@ -37,6 +37,7 @@ public class Mazo extends Pilon{
         for(Carta carta : cartas) {
             mazo.push(carta);
         }
+        setChanged();
     }
 
     protected void mezclar() {
@@ -73,14 +74,16 @@ public class Mazo extends Pilon{
         for(Carta carta : cartasAgregar) {
             mazo.push(carta);
         }
-        notifyObservers();
+        setChanged();
+        //notifyObservers();
     }
 
     @Override
     public List<Carta> sacarPilon(int i) {
         List<Carta> cartas = new ArrayList<>();
         cartas.add(this.mazo.pop());
-        notifyObservers();
+        setChanged();
+        //notifyObservers();
         return cartas;
     }
 

@@ -4,15 +4,11 @@ import Comunes.Juego.Solitario;
 import Comunes.Pilon.Pilon;
 import Interfaz.Vistas.Helpers.ObtensorImagenes;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 
 import java.io.FileNotFoundException;
-import java.util.Observable;
 
 public class VistaPilonTableau extends VistaPilon {
 
@@ -28,12 +24,12 @@ public class VistaPilonTableau extends VistaPilon {
     public void actualizarVista() throws FileNotFoundException {
         //container = (VBox)container; //container.setSpacing()
         int cantidadCartas = pilon.cantidadCartas();
-        int MIN_SPACING = -35;
-        container.setSpacing(Math.min(-7 * cantidadCartas, MIN_SPACING));
+        //int MIN_SPACING = -35;
+        //container.setSpacing(Math.min(-7 * cantidadCartas, MIN_SPACING));
         container.setAlignment(Pos.TOP_RIGHT);
         container.getChildren().clear();
         for(int i = 0; i < cantidadCartas; i++){
-            ImageView imagen = ObtensorImagenes.ObtenerImagen(pilon.getCarta(i).obtenerImagenID());
+            ImageView imagen = ObtensorImagenes.ObtenerImagenCarta(pilon.getCarta(i).obtenerImagenID());
             Pane pane = new Pane(imagen);
             pane.prefWidthProperty().bind(imagen.fitWidthProperty());
             pane.prefHeightProperty().bind(imagen.fitHeightProperty());
@@ -41,5 +37,8 @@ public class VistaPilonTableau extends VistaPilon {
 
             container.getChildren().add(pane);
         }
+        int MIN_SPACING = -70;
+        double defaultSpacing = container.getSpacing();
+        container.setSpacing(Math.min(defaultSpacing, MIN_SPACING));
     }
 }

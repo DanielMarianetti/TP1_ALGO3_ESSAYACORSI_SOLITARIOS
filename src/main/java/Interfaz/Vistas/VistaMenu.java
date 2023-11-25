@@ -1,5 +1,7 @@
 package Interfaz.Vistas;
 
+import Comunes.Juego.Klondike;
+import Comunes.Persistencia.SolitarioPersistidor;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
@@ -8,10 +10,10 @@ import java.util.Optional;
 
 public class VistaMenu {
 
-    private VistaInicial vistaInicial;
+    private VistaInicio vistaInicio;
 
-    public VistaMenu(VistaInicial inicial) {
-        vistaInicial = inicial;
+    public VistaMenu(VistaInicio inicial) {
+        vistaInicio = inicial;
     }
 
     public Control obtenerMenuBar() {
@@ -26,16 +28,24 @@ public class VistaMenu {
             public void handle(ActionEvent event) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Volver al inicio");
-                alert.setHeaderText("Si vuelve al inicio se guardara el progreso de la partida actual");
+                alert.setHeaderText("Desea guardar el progreso de la partida actual?");
                 //alert.setContentText("Volver para continuar");
 
-                ButtonType seleccionSi = new ButtonType("Volver", ButtonBar.ButtonData.YES);
-                ButtonType seleccionNo = new ButtonType("Cancelar", ButtonBar.ButtonData.NO);
-                alert.getButtonTypes().setAll(seleccionSi, seleccionNo);
+                ButtonType seleccionGuardar = new ButtonType("Guardar", ButtonBar.ButtonData.YES);
+                ButtonType seleccionNoGuardar = new ButtonType("Volver sin guardar", ButtonBar.ButtonData.NO);
+                ButtonType seleccionCancelar = new ButtonType("Cancelar", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+                alert.getButtonTypes().setAll(seleccionGuardar, seleccionNoGuardar, seleccionCancelar);
 
                 Optional<ButtonType> result = alert.showAndWait();
-                if (result.isPresent() && result.get() == seleccionSi) {
-                    vistaInicial.SetVistaInicial();
+                if (result.isPresent() && result.get() == seleccionGuardar) {
+                    SolitarioPersistidor.getInstance().saveState(new Klondike(), "asd");
+                    vistaInicio.SetVistaInicial();
+                } else if(result.isPresent() && result.get() == seleccionNoGuardar) {
+                    //Comentar esta linea que sigue si se desea que no se elimine el guardado en su totalidad
+                    //sino que sólo los cambios que se hicieron desde la última sesión
+                    SolitarioPersistidor.getInstance().eliminarGuardado();
+                    vistaInicio.SetVistaInicial();
                 }
             }
         });

@@ -1,8 +1,7 @@
-package Interfaz;
+package Interfaz.Vistas.Helpers;
 
 import Interfaz.Handlers.InicializadorKlondike;
 import Interfaz.Handlers.InicializadorSpider;
-import Interfaz.Vistas.VistaInicial;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
@@ -11,13 +10,10 @@ import java.util.List;
 
 public class BibliotecaJuegos {
 
-    private Pane lienzo;
+    private final Pane lienzo;
 
-    private VistaInicial observer;
-
-    public BibliotecaJuegos(Pane lienzo, VistaInicial observer){
+    public BibliotecaJuegos(Pane lienzo){
         this.lienzo = lienzo;
-        this.observer = observer;
     }
 
     public List<Button> getBotonesJuegos() {

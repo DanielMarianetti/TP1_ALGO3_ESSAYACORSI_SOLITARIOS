@@ -1,25 +1,24 @@
 package Interfaz.Handlers;
 
 import Comunes.Juego.Klondike;
-import Interfaz.Vistas.VistaInicial;
-import Interfaz.Vistas.VistaKlondike;
+import Comunes.Persistencia.SolitarioPersistidor;
+import Interfaz.Vistas.VistasPrincipales.VistaKlondike;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 
 
 public class InicializadorKlondike extends Button {
 
-    private Pane lienzo;
+    private final Klondike juego;
+    private final Pane lienzo;
+
     public InicializadorKlondike(Pane lienzo){
         this.lienzo = lienzo;
+
+        this.juego = new Klondike();
+        juego.iniciarRandom();
         setText("Klondike");
         setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -32,10 +31,11 @@ public class InicializadorKlondike extends Button {
     public void handleButtonClick() {
 
         //var canvas = new Canvas();
-
-        Klondike juego = new Klondike();
+        lienzo.getChildren().clear();
+        //Klondike juego = new Klondike();
         VistaKlondike vista = new VistaKlondike(juego, lienzo);
-        vista.Cargar();
+        SolitarioPersistidor.getInstance().setJuego(juego);
+        vista.cargar();
 
         /*resizeCanvas(canvas, lienzo.getWidth(), lienzo.getHeight());
 

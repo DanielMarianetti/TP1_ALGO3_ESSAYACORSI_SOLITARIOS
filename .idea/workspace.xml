@@ -5,19 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16fdcb84-5b4f-43da-997d-ae2e81aaff66" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Helpers/BibliotecaJuegos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaInicioJuego.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aplicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Carta/Carta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Carta/Carta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Juego/Klondike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Juego/Klondike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Persistencia/SolitarioPersistidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Persistencia/SolitarioPersistidor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Columna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Columna.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Mazo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Mazo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Pilon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Comunes/Pilon/Pilon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/BibliotecaJuegos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/BibliotecaJuegos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/BibliotecaJuegos.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Handlers/InicializadorKlondike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Handlers/InicializadorKlondike.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Handlers/InicializadorSpider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Handlers/InicializadorSpider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaInicial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaKlondike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaKlondike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templateKlondike.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templateKlondike.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Helpers/ObtensorImagenes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Helpers/ObtensorImagenes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaFoundation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaFoundation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaMazo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaMazo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaPilon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaPilon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaPilonTableau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaPilonTableau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaWaste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/Pilones/VistaWaste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaInicial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaKlondike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistasPrincipales/VistaKlondike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistaSpider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaz/Vistas/VistasPrincipales/VistaSpider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +69,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "git-widget-placeholder": "dev-interfaz",
-    "last_opened_file_path": "C:/Users/EC43030743/Documents/Facultad/AlgoIII_tower_defense",
+    "last_opened_file_path": "C:/Users/EC43030743/Documents/Facultad/algoIII/TP1_ALGO3_ESSAYACORSI_SOLITARIOS",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
