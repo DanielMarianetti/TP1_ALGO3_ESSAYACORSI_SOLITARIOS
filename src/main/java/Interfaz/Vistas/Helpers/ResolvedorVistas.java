@@ -29,7 +29,6 @@ public class ResolvedorVistas {
             }
             return vista;
         } else {
-            System.out.println("Devuelvo VistaBibliotecaJuegos");
             return new VistaBibliotecaJuegos(lienzo);
         }
     }

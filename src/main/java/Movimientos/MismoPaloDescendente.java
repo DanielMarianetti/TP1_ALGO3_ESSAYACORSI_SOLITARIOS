@@ -5,9 +5,10 @@ import Comunes.Carta.Numero;
 import Comunes.Carta.Palo;
 import Comunes.Pilon.Pilon;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class MismoPaloDescendente implements Movimiento {
+public class MismoPaloDescendente implements Movimiento, Serializable {
 
     @Override
     public void mover(int altura, Pilon pilonOrigen, Pilon pilonDestino) {

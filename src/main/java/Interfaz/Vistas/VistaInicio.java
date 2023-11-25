@@ -20,6 +20,7 @@ public class VistaInicio {
         this.stage = stage;
         stage.setTitle("Solitario");
         stage.show();
+
         stage.setOnCloseRequest(event -> {
             event.consume();
 
@@ -60,7 +61,10 @@ public class VistaInicio {
         Control menu = vistaMenu.obtenerMenuBar();
 
         StackPane lienzo = new StackPane();
+        lienzo.setAlignment(Pos.CENTER);
+        lienzo.widthProperty().add(root.widthProperty());
         ObtensorImagenes.SettearImagenFondo(lienzo);
+        //lienzo.setBackground(background);
         VBox buttonBox = new VBox(30);
         buttonBox.setAlignment(Pos.CENTER);
         Button botonInicioJuego = new Button("Jugar");
@@ -72,7 +76,7 @@ public class VistaInicio {
         root.setTop(menu);
         root.setBottom(footer);
 
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 900, 600);
 
         stage.setScene(scene);
         stage.setTitle("Solitario");

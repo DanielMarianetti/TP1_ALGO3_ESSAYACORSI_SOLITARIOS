@@ -78,20 +78,16 @@ public class Spider extends Solitario {
         for (Pilon c : this.tableau) {
             this.mazo.mover(this.mazo.cantidadCartas()-1, c);
             c.getUltimaCarta().setBocaArriba(true);
+            c.notifyObservers();
         }
+        mazo.notifyObservers();
     }
 
-    public void rearmarMazo() {
-        return;
-    }
+    public void rearmarMazo() { }
 
-    public void moverWasteAPilon(int colunma) {
-        return;
-    }
+    public void moverWasteAPilon(int colunma)  { }
 
-    public void moverWasteAFoundation(int foundation) {
-        return;
-    }
+    public void moverWasteAFoundation(int foundation)  { }
 
     public void moverPilonAPilon(int columnaOrigen, int altura, int columnaDestino) {
         Pilon pilonOrigen = this.tableau.get(columnaOrigen);
@@ -105,6 +101,8 @@ public class Spider extends Solitario {
             moverPilonAFoundation(columnaDestino, pilonDestino.cantidadCartas()-13, foundationSieguiente);
             foundationSieguiente++;
         }
+        pilonDestino.notifyObservers();
+        pilonOrigen.notifyObservers();
     }
 
     public void moverPilonAFoundation(int columnaOrigen, int altura, int foundationDestino) {
@@ -116,10 +114,10 @@ public class Spider extends Solitario {
             pilonOrigen.getUltimaCarta().setBocaArriba(true);
         }
         this.juegoGanado();
+        fDestino.notifyObservers();
+        pilonOrigen.notifyObservers();
     }
 
-    public void moverFoundationAPilon(int foundationOrigen, int altura,  int columnaDestino) {
-        return;
-    }
+    public void moverFoundationAPilon(int foundationOrigen, int altura,  int columnaDestino) { }
 
 }

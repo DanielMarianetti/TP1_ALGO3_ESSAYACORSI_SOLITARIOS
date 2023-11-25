@@ -33,7 +33,6 @@ public class VistaKlondike implements VistaPrincipal {
     @Override
     public void cargar() {
         try {
-            System.out.println("Cargo la vista Klondike");
             GridPane tableauDisplay = FXMLLoader.load(getClass().getClassLoader().getResource("templateKlondike.fxml"));
             //ObtensorImagenes.SettearImagenFondo(tableauDisplay);
             HBox topDisplay = (HBox) tableauDisplay.lookup("#top");
@@ -52,11 +51,12 @@ public class VistaKlondike implements VistaPrincipal {
             HBox foundationsDisplay = (HBox) topDisplay.lookup("#foundations");
             //foundationsDisplay.setBackground(new Background(new BackgroundFill(Color.rgb(180, 0, 0, 0.8), new CornerRadii(0.8), null)));
             foundationsDisplay.setSpacing(10);
-            for(int i = 0; i < 4; i++){
+            int cantidadFoundations = juego.foundation.size();
+            for(int i = 0; i < cantidadFoundations; i++){
                 StackPane foundation = new StackPane();
                 /*foundation.setMinHeight(foundationsDisplay.getHeight());
                 foundation.setMinWidth(foundationsDisplay.getWidth() / 4);*/
-                foundation.prefWidthProperty().bind(foundationsDisplay.widthProperty().divide(4));
+                foundation.prefWidthProperty().bind(foundationsDisplay.widthProperty().divide(cantidadFoundations));
                 foundation.prefHeightProperty().bind(foundationsDisplay.heightProperty());
                 //foundation.setBackground(new Background(new BackgroundFill(Color.rgb(180, 180, 180, 1), new CornerRadii(0.8), null)));
                 //foundation.getChildren().add(new Label("foundation " + i ));
@@ -67,11 +67,12 @@ public class VistaKlondike implements VistaPrincipal {
             HBox pilonesDisplay = (HBox) tableauDisplay.lookup("#pilones");
             //pilonesDisplay.setBackground(new Background(new BackgroundFill(Color.rgb(180, 180, 0, 0.8), new CornerRadii(0.8), null)));
 
-            for(int i = 0; i < 7; i++){
+            int cantidadPilones = juego.tableau.size();
+            for(int i = 0; i < cantidadPilones; i++){
                 VBox pilonColumna = new VBox();
                 /*foundation.setMinHeight(foundationsDisplay.getHeight());
                 foundation.setMinWidth(foundationsDisplay.getWidth() / 4);*/
-                pilonColumna.prefWidthProperty().bind(pilonesDisplay.widthProperty().divide(7));
+                pilonColumna.prefWidthProperty().bind(pilonesDisplay.widthProperty().divide(cantidadPilones));
                 pilonColumna.prefHeightProperty().bind(pilonesDisplay.heightProperty());
                 //pilonColumna.setBackground(new Background(new BackgroundFill(Color.rgb(60, 60, 60, 1), new CornerRadii(0.8), null)));
                 //foundation.getChildren().add(new Label("foundation " + i ));

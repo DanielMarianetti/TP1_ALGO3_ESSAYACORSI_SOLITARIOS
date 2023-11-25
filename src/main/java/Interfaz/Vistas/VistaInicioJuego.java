@@ -40,6 +40,8 @@ public class VistaInicioJuego {
                 if (buttonType == botonCargar) {
                     setVista(SolitarioPersistidor.getInstance().loadState("asda"));
                     //juego.set(SolitarioPersistidor.getInstance().loadState("asda"));
+                } else {
+                    setVista(null);
                 }
                 //stage.close();
             });
@@ -56,7 +58,6 @@ public class VistaInicioJuego {
     private void setVista(Solitario juego){
         //StackPane lienzo = new StackPane();
         lienzo.getChildren().clear();
-        System.out.println("Llego a SetVista con juego: " + juego);
         ResolvedorVistas.SetVista(juego, lienzo).cargar();
     }
 }

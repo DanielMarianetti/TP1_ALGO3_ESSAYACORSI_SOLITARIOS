@@ -22,7 +22,7 @@ public abstract class VistaPilon implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         try {
-            System.out.println("Me llega un update " + this);
+            //System.out.println("Me llega un update " + this);
             actualizarVista();
         } catch (FileNotFoundException e) {
             System.out.println("Error al hacer el update, " + e.getMessage());

@@ -5,9 +5,10 @@ import Comunes.Carta.Numero;
 import Comunes.Pilon.Pilon;
 import Movimientos.MismoPaloDescendente;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class PilonSecuenciaCompleta implements Objetivo{
+public class PilonSecuenciaCompleta implements Objetivo, Serializable {
 
     @Override
     public boolean cumplido(Pilon c) {

@@ -7,7 +7,7 @@ public class Aplicacion extends Application {
     @Override
     public void start(Stage stage) {
 
-        stage.setWidth(800);
+        stage.setWidth(888);
         stage.setHeight(600);
         stage.setResizable(false);
 

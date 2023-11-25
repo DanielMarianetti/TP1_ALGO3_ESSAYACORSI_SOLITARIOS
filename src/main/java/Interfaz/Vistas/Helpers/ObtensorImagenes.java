@@ -2,7 +2,7 @@ package Interfaz.Vistas.Helpers;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.scene.shape.Rectangle;
 
 import java.io.File;
@@ -13,39 +13,33 @@ import java.io.InputStream;
 public class ObtensorImagenes {
 
     public static void SettearImagenFondo(Pane espacio) {
-        try{
-            String path = "ImagenesGUI/fondo.jpg";
+        try {
+            String path = "ImagenesGUI/fondoResized.jpg";
             InputStream stream = new FileInputStream(path);
             Image imagen = new Image(stream);
+
+            BackgroundSize backgroundSize = new BackgroundSize(
+                    espacio.getWidth(),
+                    espacio.getHeight(),
+                    false,
+                    false,
+                    true,
+                    false
+            );
+
             espacio.setBackground(
-                    new javafx.scene.layout.Background(
-                            new javafx.scene.layout.BackgroundImage(
+                    new Background(
+                            new BackgroundImage(
                                     imagen,
-                                    javafx.scene.layout.BackgroundRepeat.NO_REPEAT,
-                                    javafx.scene.layout.BackgroundRepeat.NO_REPEAT,
-                                    javafx.scene.layout.BackgroundPosition.DEFAULT,
-                                    new javafx.scene.layout.BackgroundSize(
-                                            javafx.scene.layout.BackgroundSize.AUTO,
-                                            javafx.scene.layout.BackgroundSize.AUTO,
-                                            false,
-                                            false,
-                                            true,
-                                            false
-                                    )
+                                    BackgroundRepeat.NO_REPEAT,
+                                    BackgroundRepeat.NO_REPEAT,
+                                    BackgroundPosition.CENTER,
+                                    backgroundSize
                             )
                     )
             );
-            //imageView.setFitWidth(73);
-            //imageView.setFitHeight(90);
-            //Rectangle clip = new Rectangle(imageView.getFitWidth(), imageView.getFitHeight());
-            //clip.setArcWidth(20);
-            //clip.setArcHeight(20);
-            //imageView.setClip(clip);
-            //imageView.setStyle("-fx-border-color: black; -fx-border-width: 1;");
-            //return imageView;
         } catch (FileNotFoundException ex) {
-            System.err.println("Error al intentar obtener la imágen de fondo");
-            //return new ImageView();
+            System.err.println("Error al intentar obtener la imagen de fondo");
         }
     }
 

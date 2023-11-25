@@ -32,10 +32,18 @@ public class VistaMazo extends VistaPilon {
             Pane pane = new Pane(imagen);
             pane.prefWidthProperty().bind(imagen.fitWidthProperty());
             pane.prefHeightProperty().bind(imagen.fitHeightProperty());
-            pane.setStyle("-fx-border-color: black; -fx-border-width: 2;");
+            //pane.setStyle("-fx-border-color: black; -fx-border-width: 2;");
 
             pane.setOnMouseClicked(event -> juego.moverMazoAWaste());
 
+            container.getChildren().add(pane);
+        } else {
+            ImageView imagen = ObtensorImagenes.ObtenerImagenCarta("mazoVacio");
+            Pane pane = new Pane(imagen);
+            pane.prefWidthProperty().bind(imagen.fitWidthProperty());
+            pane.prefHeightProperty().bind(imagen.fitHeightProperty());
+
+            pane.setOnMouseClicked(event -> juego.rearmarMazo());
             container.getChildren().add(pane);
         }
     }
