@@ -2,6 +2,7 @@ package Interfaz.Vistas.Pilones;
 
 import Comunes.Juego.Solitario;
 import Comunes.Pilon.Pilon;
+import Interfaz.Handlers.SeleccionControlador;
 import Interfaz.Vistas.Helpers.ObtensorImagenes;
 import javafx.geometry.Pos;
 import javafx.scene.image.ImageView;
@@ -14,18 +15,20 @@ public class VistaPilonTableau extends VistaPilon {
 
     private final VBox container;
     private int numeroPilon;
+    private SeleccionControlador s;
 
-    public VistaPilonTableau(Pilon pilon, Solitario solitario, int numeroPilon, Pane container){
+    public VistaPilonTableau(Pilon pilon, Solitario solitario, int numeroPilon, Pane container, SeleccionControlador s){
         super(pilon, solitario);
         this.numeroPilon = numeroPilon;
         this.container = (VBox) container;
+
+        this.s = s;
     }
 
     public void actualizarVista() throws FileNotFoundException {
-        //container = (VBox)container; //container.setSpacing()
+
         int cantidadCartas = pilon.cantidadCartas();
-        //int MIN_SPACING = -35;
-        //container.setSpacing(Math.min(-7 * cantidadCartas, MIN_SPACING));
+
         container.setAlignment(Pos.TOP_RIGHT);
         container.getChildren().clear();
         for(int i = 0; i < cantidadCartas; i++){
@@ -33,7 +36,9 @@ public class VistaPilonTableau extends VistaPilon {
             Pane pane = new Pane(imagen);
             pane.prefWidthProperty().bind(imagen.fitWidthProperty());
             pane.prefHeightProperty().bind(imagen.fitHeightProperty());
-            //pane.setStyle("-fx-border-color: black; -fx-border-width: 2;");
+
+            final int alt = i;
+            pane.setOnMouseClicked(event -> s.handleClickPilon(numeroPilon, alt));
 
             container.getChildren().add(pane);
         }
@@ -41,4 +46,5 @@ public class VistaPilonTableau extends VistaPilon {
         double defaultSpacing = container.getSpacing();
         container.setSpacing(Math.min(defaultSpacing, MIN_SPACING));
     }
+
 }

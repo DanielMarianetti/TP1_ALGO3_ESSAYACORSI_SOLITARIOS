@@ -24,15 +24,11 @@ public class VistaMazo extends VistaPilon {
     public void actualizarVista() throws FileNotFoundException {
         container.getChildren().clear();
         if (pilon.cantidadCartas() != 0){
-            /*Color backgroundColor = Color.rgb(28, 170, 23, 1.0);
-            BackgroundFill backgroundFill = new BackgroundFill(backgroundColor, null, null);
-            Background background = new Background(backgroundFill);
             container.setBackground(background);*/
             ImageView imagen = ObtensorImagenes.ObtenerImagenCarta(pilon.getCarta(0).obtenerImagenID());
             Pane pane = new Pane(imagen);
             pane.prefWidthProperty().bind(imagen.fitWidthProperty());
             pane.prefHeightProperty().bind(imagen.fitHeightProperty());
-            //pane.setStyle("-fx-border-color: black; -fx-border-width: 2;");
 
             pane.setOnMouseClicked(event -> juego.moverMazoAWaste());
 

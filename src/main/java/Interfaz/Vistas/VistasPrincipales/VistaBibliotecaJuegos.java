@@ -19,9 +19,13 @@ public class VistaBibliotecaJuegos implements VistaPrincipal {
         var botonesJuegos = bibJuegos.getBotonesJuegos();
         VBox buttonBox = new VBox(30);
         buttonBox.setAlignment(Pos.CENTER);
-        //buttonBox.setBackground(background);
-        //buttonBox.setMaxSize(400, 300);
+
         buttonBox.getChildren().addAll(botonesJuegos);
         lienzo.getChildren().add(buttonBox);
+    }
+
+    @Override
+    public void update() {
+        cargar();
     }
 }

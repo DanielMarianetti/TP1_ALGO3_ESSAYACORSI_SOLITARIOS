@@ -27,10 +27,8 @@ public class InicializadorSpider extends Button {
     }
 
     public void handleButtonClick() {
-        //BorderPane root = new BorderPane();
         lienzo.getChildren().clear();
-        //Spider juego = new Spider();
-        //Llamado a la vista
+
         VistaSpider vista = new VistaSpider(juego, lienzo);
         SolitarioPersistidor.getInstance().setJuego(juego);
         vista.cargar();

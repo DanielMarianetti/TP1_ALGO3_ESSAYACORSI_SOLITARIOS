@@ -30,26 +30,11 @@ public class InicializadorKlondike extends Button {
 
     public void handleButtonClick() {
 
-        //var canvas = new Canvas();
         lienzo.getChildren().clear();
-        //Klondike juego = new Klondike();
+
         VistaKlondike vista = new VistaKlondike(juego, lienzo);
         SolitarioPersistidor.getInstance().setJuego(juego);
         vista.cargar();
 
-        /*resizeCanvas(canvas, lienzo.getWidth(), lienzo.getHeight());
-
-        lienzo.widthProperty().addListener((obs, oldVal, newVal) ->
-                resizeCanvas(canvas, newVal.doubleValue(), lienzo.getHeight()));
-
-        lienzo.heightProperty().addListener((obs, oldVal, newVal) ->
-                resizeCanvas(canvas, lienzo.getWidth(), newVal.doubleValue()));
-*/
-        //lienzo.getChildren().add(canvas);
-        //root.setCenter(canvas);
-
-       // Scene scene = new Scene(root);
-
-       // lienzo.setScene(scene);
     }
 }

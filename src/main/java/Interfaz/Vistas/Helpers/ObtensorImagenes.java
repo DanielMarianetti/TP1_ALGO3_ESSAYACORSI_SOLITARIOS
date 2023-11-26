@@ -53,7 +53,7 @@ public class ObtensorImagenes {
         clip.setArcWidth(20);
         clip.setArcHeight(20);
         imageView.setClip(clip);
-        //imageView.setStyle("-fx-border-color: black; -fx-border-width: 1;");
+
         return imageView;
     }
 }

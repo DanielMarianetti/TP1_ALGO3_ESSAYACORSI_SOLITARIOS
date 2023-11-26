@@ -40,6 +40,10 @@ public class ColorIntercaladoDescendente implements Movimiento, Serializable {
         //     return false;
         // }
 
+        if (numero == Numero.AS) {
+            return false;
+        }
+
         int ordinal = numero.ordinal();
         Numero numeroSiguiente = Numero.values()[ordinal - 1];
         String colorSiguiente = palo.color;

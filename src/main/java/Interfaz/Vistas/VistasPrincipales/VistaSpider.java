@@ -1,24 +1,26 @@
 package Interfaz.Vistas.VistasPrincipales;
 
-import Comunes.Juego.Klondike;
 import Comunes.Juego.Spider;
-import Interfaz.Vistas.Pilones.VistaFoundation;
-import Interfaz.Vistas.Pilones.VistaMazo;
-import Interfaz.Vistas.Pilones.VistaPilonTableau;
-import Interfaz.Vistas.Pilones.VistaWaste;
+import Interfaz.Handlers.SeleccionControlador;
+import Interfaz.Vistas.Pilones.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class VistaSpider implements VistaPrincipal {
 
     private Spider juego;
     private Pane lienzo;
 
+    private List<VistaPilon> vistas;
+
     public VistaSpider(Spider juego, Pane lienzo) {
         this.juego = juego;
         this.lienzo = lienzo;
+        this.vistas = new ArrayList<>();
     }
     @Override
     public void cargar() {
@@ -31,13 +33,18 @@ public class VistaSpider implements VistaPrincipal {
             vistaMazo.actualizarVista();
             HBox foundationsDisplay = (HBox) topDisplay.lookup("#foundations");
             int cantidadFoundations = juego.foundation.size();
+
+            SeleccionControlador s = new SeleccionControlador(juego, this);
+
             for(int i = 0; i < cantidadFoundations; i++){
                 StackPane foundation = new StackPane();
                 foundation.prefWidthProperty().bind(foundationsDisplay.widthProperty().divide(cantidadFoundations));
                 foundation.prefHeightProperty().bind(foundationsDisplay.heightProperty());
-                VistaFoundation vista = new VistaFoundation(juego.foundation.get(i), juego, i, foundation);
+                VistaFoundation vista = new VistaFoundation(juego.foundation.get(i), juego, i, foundation, s);
                 vista.actualizarVista();
                 foundationsDisplay.getChildren().add(foundation);
+
+                vistas.add(vista);
             }
             HBox pilonesDisplay = (HBox) tableauDisplay.lookup("#pilones");
             int cantidadPilones = juego.tableau.size();
@@ -45,14 +52,28 @@ public class VistaSpider implements VistaPrincipal {
                 VBox pilonColumna = new VBox();
                 pilonColumna.prefWidthProperty().bind(pilonesDisplay.widthProperty().divide(cantidadPilones));
                 pilonColumna.prefHeightProperty().bind(pilonesDisplay.heightProperty());
-                VistaPilonTableau vista = new VistaPilonTableau(juego.tableau.get(i), juego, i, pilonColumna);
+                VistaPilonTableau vista = new VistaPilonTableau(juego.tableau.get(i), juego, i, pilonColumna, s);
                 vista.actualizarVista();
                 pilonesDisplay.getChildren().add(pilonColumna);
+
+                vistas.add(vista);
             }
+
+            vistas.add(vistaMazo);
 
             lienzo.getChildren().add(tableauDisplay);
         } catch (IOException e){
             System.out.println("fail al obtener el template");
+        }
+    }
+
+    public void update() {
+        for (VistaPilon v: vistas) {
+            try {
+                v.actualizarVista();
+            } catch (IOException e){
+                System.out.println("fail al obtener el template");
+            }
         }
     }
 }
