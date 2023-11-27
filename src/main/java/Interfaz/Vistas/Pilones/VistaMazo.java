@@ -24,7 +24,6 @@ public class VistaMazo extends VistaPilon {
     public void actualizarVista() throws FileNotFoundException {
         container.getChildren().clear();
         if (pilon.cantidadCartas() != 0){
-            container.setBackground(background);*/
             ImageView imagen = ObtensorImagenes.ObtenerImagenCarta(pilon.getCarta(0).obtenerImagenID());
             Pane pane = new Pane(imagen);
             pane.prefWidthProperty().bind(imagen.fitWidthProperty());

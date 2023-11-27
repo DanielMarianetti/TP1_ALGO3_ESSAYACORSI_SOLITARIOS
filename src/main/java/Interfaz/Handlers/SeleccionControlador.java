@@ -22,7 +22,6 @@ public class SeleccionControlador {
         this.movimiento.add(col);
         this.movimiento.add(alt);
 
-        System.out.println(movimiento.size());
 
         switch (movimiento.size()) {
             case 4:
@@ -49,8 +48,6 @@ public class SeleccionControlador {
         if (movimiento.size() > 5) {
             movimiento = new ArrayList<>();
         }
-
-        System.out.println("Dsd");
 
         if (this.movimiento.size() == 5) {
             juego.moverPilonAFoundation(movimiento.get(0), movimiento.get(1), movimiento.get(2));
