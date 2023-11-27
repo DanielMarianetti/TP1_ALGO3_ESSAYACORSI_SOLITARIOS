@@ -36,6 +36,7 @@ public class Klondike extends Solitario {
         int contador = 0;
         for (Pilon columna : this.tableau) {
             for (int x = 0; x <= contador; x++) {
+                //if (x == 0) continue;
                 columna.recibirCartas(this.mazo.sacarPilon(this.mazo.cantidadCartas()-1));
             }
             contador++;
@@ -51,7 +52,7 @@ public class Klondike extends Solitario {
 
     public void moverMazoAWaste() {
         this.mazo.mover(this.mazo.cantidadCartas()-1, this.waste);
-        System.out.println("Muevo mazo a waste");
+        //System.out.println("Muevo mazo a waste");
         this.waste.getUltimaCarta().setBocaArriba(true);
         this.mazo.notifyObservers();
         this.waste.notifyObservers();

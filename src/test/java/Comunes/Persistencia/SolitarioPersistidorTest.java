@@ -18,14 +18,10 @@ public class SolitarioPersistidorTest extends TestCase {
         SolitarioPersistidor persistidor = new SolitarioPersistidor();
 
         String fileName = "fileNameGuardado";
-        try {
-            persistidor.saveState(solitario, fileName);
-            File file = new File("partidas" + File.separator + fileName);
-            boolean fileDeleted = file.delete();
-            assert fileDeleted;
-        } catch (IOException e){
-            fail("Excepcion no esperada");
-        }
+        persistidor.saveState(solitario, fileName);
+        File file = new File("partidas" + File.separator + fileName);
+        boolean fileDeleted = file.delete();
+        assert fileDeleted;
     }
 
     public void testLoadState() {
@@ -37,19 +33,10 @@ public class SolitarioPersistidorTest extends TestCase {
         String fileName = "fileNameGuardado";
         String pathGuardado = "partidas" + File.separator + fileName;
 
-        try {
-            persistidor.saveState(solitario, fileName);
-        } catch (IOException e){
-            fail("Excepcion no esperada");
-        }
+        persistidor.saveState(solitario, fileName);
 
-        try {
-            Solitario persistido = persistidor.loadState(fileName);
-            assertNotNull(persistido);
-        } catch (IOException e) {
-            e.printStackTrace();
-            fail("Excepcion no esperada");
-        }
+        Solitario persistido = persistidor.loadState(fileName);
+        assertNotNull(persistido);
 
         File file = new File(pathGuardado);
         boolean fileDeleted = file.delete();
@@ -59,12 +46,8 @@ public class SolitarioPersistidorTest extends TestCase {
     public void testAbrirArchivoQueNoExisteArrojaExcepcion() {
         SolitarioPersistidor persistidor = new SolitarioPersistidor();
 
-        try {
-            persistidor.loadState("cualquiera");
-            fail("No debe abrir un archivo que no existe");
-        } catch (IOException e) {
-            assert true;
-        }
+        persistidor.loadState("cualquiera");
+        fail("No debe abrir un archivo que no existe");
     }
     public void testSiNoExisteElDirectorioDeGuardadoIgualSeCrea() {
         SolitarioPersistidor persistidor = new SolitarioPersistidor();
@@ -77,14 +60,10 @@ public class SolitarioPersistidorTest extends TestCase {
         assertFalse(directorio.exists());
 
         String fileName = "fileNameGuardado";
-        try {
-            persistidor.saveState(solitario, fileName);
-            File file = new File("partidas" + File.separator + fileName);
-            boolean fileDeleted = file.delete();
-            assert fileDeleted;
-        } catch (IOException e){
-            fail("Excepcion no esperada");
-        }
+        persistidor.saveState(solitario, fileName);
+        File file = new File("partidas" + File.separator + fileName);
+        boolean fileDeleted = file.delete();
+        assert fileDeleted;
     }
 
     ///Función auxiliar para borrar el directorio con todos sus contenidos

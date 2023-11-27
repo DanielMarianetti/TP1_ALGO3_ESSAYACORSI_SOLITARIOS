@@ -98,14 +98,27 @@ public class Spider extends Solitario {
             pilonOrigen.getUltimaCarta().setBocaArriba(true);
         }
         if (this.sec.cumplido(pilonDestino)) {
-            moverPilonAFoundation(columnaDestino, pilonDestino.cantidadCartas()-13, foundationSieguiente);
+            moverPilonAFoundationPriv(columnaDestino, pilonDestino.cantidadCartas()-13, foundationSieguiente);
             foundationSieguiente++;
         }
         pilonDestino.notifyObservers();
         pilonOrigen.notifyObservers();
     }
 
-    public void moverPilonAFoundation(int columnaOrigen, int altura, int foundationDestino) {
+    public void moverPilonAFoundation(int columnaOrigen, int altura, int foundationDestino){ }
+    /*public void moverPilonAFoundation(int columnaOrigen, int altura, int foundationDestino) {
+        Pilon pilonOrigen = this.tableau.get(columnaOrigen);
+        pilonOrigen.setMovimiento(new MovimientoLibre());
+        Pilon fDestino = this.foundation.get(foundationDestino);
+        pilonOrigen.mover(altura, fDestino);
+        if (!pilonOrigen.isPilonVacio()) {
+            pilonOrigen.getUltimaCarta().setBocaArriba(true);
+        }
+        this.juegoGanado();
+        fDestino.notifyObservers();
+        pilonOrigen.notifyObservers();
+    }*/
+    private void moverPilonAFoundationPriv(int columnaOrigen, int altura, int foundationDestino) {
         Pilon pilonOrigen = this.tableau.get(columnaOrigen);
         pilonOrigen.setMovimiento(new MovimientoLibre());
         Pilon fDestino = this.foundation.get(foundationDestino);
@@ -117,6 +130,7 @@ public class Spider extends Solitario {
         fDestino.notifyObservers();
         pilonOrigen.notifyObservers();
     }
+
 
     public void moverFoundationAPilon(int foundationOrigen, int altura,  int columnaDestino) { }
 

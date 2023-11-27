@@ -21,7 +21,7 @@ public class VistaPilonTableau extends VistaPilon {
         super(pilon, solitario);
         this.numeroPilon = numeroPilon;
         this.container = (VBox) container;
-
+        this.container.setAlignment(Pos.TOP_RIGHT);
         this.s = s;
     }
 
@@ -29,9 +29,26 @@ public class VistaPilonTableau extends VistaPilon {
 
         int cantidadCartas = pilon.cantidadCartas();
 
-        container.setAlignment(Pos.TOP_RIGHT);
         container.getChildren().clear();
+
+        if(cantidadCartas == 0) {
+            Pane pane = new Pane();
+            pane.setPrefSize(73, 90);
+
+            // Set white borders using CSS
+            pane.setStyle(
+                    "-fx-border-color: white white white white;" +
+                    "-fx-border-width: 1 1 1 1;" +
+                    "-fx-border-style: solid;"
+            );
+
+            pane.setOnMouseClicked(event -> s.handleClickPilon(numeroPilon, 0));
+
+            container.getChildren().add(pane);
+        }
+
         for(int i = 0; i < cantidadCartas; i++){
+
             ImageView imagen = ObtensorImagenes.ObtenerImagenCarta(pilon.getCarta(i).obtenerImagenID());
             Pane pane = new Pane(imagen);
             pane.prefWidthProperty().bind(imagen.fitWidthProperty());
@@ -42,6 +59,7 @@ public class VistaPilonTableau extends VistaPilon {
 
             container.getChildren().add(pane);
         }
+
         int MIN_SPACING = -70;
         double defaultSpacing = container.getSpacing();
         container.setSpacing(Math.min(defaultSpacing, MIN_SPACING));
