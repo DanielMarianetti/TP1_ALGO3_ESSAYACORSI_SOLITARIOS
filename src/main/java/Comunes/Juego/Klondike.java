@@ -119,7 +119,8 @@ public class Klondike extends Solitario {
         Pilon foundation = this.foundation.get(foundationOrigen);
         Pilon pilonOrigen = this.tableau.get(columnaDestino);
         foundation.setMovimiento(new ColorIntercaladoDescendente());
-        foundation.mover(altura, pilonOrigen);
+
+        foundation.mover(foundation.cantidadCartas() - 1, pilonOrigen);
         pilonOrigen.notifyObservers();
         foundation.notifyObservers();
     }

@@ -30,13 +30,16 @@ public class VistaFoundation extends VistaPilon {
         int cantidadCartas = pilon.cantidadCartas();
 
         for(int i = 0; i < cantidadCartas; i++){
-            ImageView imagen = ObtensorImagenes.ObtenerImagenCarta(pilon.getUltimaCarta().obtenerImagenID());
+            ImageView imagen = ObtensorImagenes.ObtenerImagenCarta(pilon.getCarta(i).obtenerImagenID());
 
             container.getChildren().add(imagen);
         }
+        if(cantidadCartas == 0) {
+            container.getChildren().clear();
+        }
 
         StackPane pane = new StackPane();
-        pane.setOnMouseClicked(mouseEvent -> s.handleClickFoundation(numeroFoundation, 0, pane));
+        pane.setOnMouseClicked(mouseEvent -> s.handleClickFoundation(numeroFoundation, 0));
         container.getChildren().add(pane);
 
     }

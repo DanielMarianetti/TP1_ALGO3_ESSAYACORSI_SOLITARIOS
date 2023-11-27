@@ -18,9 +18,9 @@ public class VistaMenu {
 
     public Control obtenerMenuBar() {
         MenuBar menuBar = new MenuBar();
-        Menu menu = new Menu("Opciones"); //TODO
-        MenuItem selectConfig = new MenuItem("Configuracion"); //TODO
-        MenuItem selectAbout = new MenuItem("Acerca");
+        Menu menu = new Menu("Menu");
+        //MenuItem selectConfig = new MenuItem("Configuracion"); //TODO
+       // MenuItem selectAbout = new MenuItem("Acerca");
 
         MenuItem selectMainMenu = new MenuItem("Volver al inicio");
         selectMainMenu.setOnAction(new EventHandler<ActionEvent>() {
@@ -50,7 +50,7 @@ public class VistaMenu {
             }
         });
 
-        menu.getItems().addAll(selectConfig, selectAbout, selectMainMenu);
+        menu.getItems().addAll(selectMainMenu);
         menuBar.getMenus().add(menu);
 
         return menuBar;

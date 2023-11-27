@@ -38,7 +38,9 @@ public class SeleccionControlador {
                 actualizar();
                 break;
             case 5:
+                System.out.println("Muevo de foundation a Pilon");
                 juego.moverFoundationAPilon(movimiento.get(0),movimiento.get(1),movimiento.get(3));
+                actualizar();
                 break;
         }
         if (movimiento.size() > 2) {
@@ -46,9 +48,7 @@ public class SeleccionControlador {
         }
     }
 
-    public void handleClickFoundation(int col, int alt, Pane panel) {
-        setBaseMovimientoGUI(panel);
-
+    public void handleClickFoundation(int col, int alt) {
         this.movimiento.add(col);
         this.movimiento.add(alt);
         this.movimiento.add(10);
@@ -69,10 +69,11 @@ public class SeleccionControlador {
     public void handleClickWaste(Pane panel) {
         setBaseMovimientoGUI(panel);
 
-        if (movimiento.size() > 1) {
-            movimiento = new ArrayList<>();
+        if (movimiento.size() >= 1) {
+            actualizar();
+        } else {
+            movimiento.add(10);
         }
-        movimiento.add(10);
     }
 
     public void actualizar() {
