@@ -7,11 +7,11 @@ import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observer;
 
 public class BibliotecaJuegos {
 
     private final Pane lienzo;
-
     public BibliotecaJuegos(Pane lienzo){
         this.lienzo = lienzo;
     }

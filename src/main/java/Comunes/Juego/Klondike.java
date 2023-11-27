@@ -47,6 +47,8 @@ public class Klondike extends Solitario {
     @Override
     public boolean juegoGanado() {
         this.juegoGanado = this.objetivo.cumplido(this.foundation);
+        setChanged();
+        notifyObservers();
         return this.juegoGanado;
     }
 

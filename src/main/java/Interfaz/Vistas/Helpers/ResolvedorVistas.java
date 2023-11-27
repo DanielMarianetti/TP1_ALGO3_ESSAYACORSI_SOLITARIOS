@@ -10,6 +10,8 @@ import Interfaz.Vistas.VistasPrincipales.VistaPrincipal;
 import Interfaz.Vistas.VistasPrincipales.VistaSpider;
 import javafx.scene.layout.Pane;
 
+import java.util.Observer;
+
 public class ResolvedorVistas {
 
     public static VistaPrincipal SetVista(Solitario juegoActual, Pane lienzo) {

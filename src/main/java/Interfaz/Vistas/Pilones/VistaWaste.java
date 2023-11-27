@@ -32,7 +32,7 @@ public class VistaWaste extends VistaPilon {
             pane.prefHeightProperty().bind(imagen.fitHeightProperty());
             //pane.setStyle("-fx-border-color: black; -fx-border-width: 2;");
 
-            pane.setOnMouseClicked(event -> s.handleClickWaste());
+            pane.setOnMouseClicked(event -> s.handleClickWaste(pane));
 
             container.getChildren().add(pane);
         }

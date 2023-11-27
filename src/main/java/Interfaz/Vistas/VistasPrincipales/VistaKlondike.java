@@ -1,26 +1,28 @@
 package Interfaz.Vistas.VistasPrincipales;
 
 import Comunes.Juego.Klondike;
+import Comunes.Juego.Solitario;
 import Interfaz.Handlers.SeleccionControlador;
 import Interfaz.Vistas.Pilones.*;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class VistaKlondike implements VistaPrincipal {
+public class VistaKlondike extends VistaPrincipal {
 
     private Klondike juego;
-    private Pane lienzo;
-
-    private List<VistaPilon> vistas;
 
     public VistaKlondike(Klondike juego, Pane lienzo) {
+        super(lienzo);
         this.juego = juego;
-        this.lienzo = lienzo;
-        this.vistas = new ArrayList<>();
+        juego.addObserver(this);
     }
 
     @Override

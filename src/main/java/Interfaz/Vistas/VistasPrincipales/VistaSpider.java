@@ -1,26 +1,27 @@
 package Interfaz.Vistas.VistasPrincipales;
 
+import Comunes.Juego.Solitario;
 import Comunes.Juego.Spider;
 import Interfaz.Handlers.SeleccionControlador;
 import Interfaz.Vistas.Pilones.*;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class VistaSpider implements VistaPrincipal {
+public class VistaSpider extends VistaPrincipal {
 
     private Spider juego;
-    private Pane lienzo;
-
-    private List<VistaPilon> vistas;
 
     public VistaSpider(Spider juego, Pane lienzo) {
+        super(lienzo);
         this.juego = juego;
-        this.lienzo = lienzo;
-        this.vistas = new ArrayList<>();
+        juego.addObserver(this);
     }
     @Override
     public void cargar() {

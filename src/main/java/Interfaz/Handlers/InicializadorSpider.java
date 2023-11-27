@@ -8,6 +8,8 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
+import java.util.Observer;
+
 public class InicializadorSpider extends Button {
 
     private final Spider juego;

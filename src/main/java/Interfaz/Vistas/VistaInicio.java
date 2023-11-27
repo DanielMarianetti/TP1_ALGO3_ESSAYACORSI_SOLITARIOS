@@ -1,6 +1,7 @@
 package Interfaz.Vistas;
 
 import Comunes.Juego.Klondike;
+import Comunes.Juego.Solitario;
 import Comunes.Persistencia.SolitarioPersistidor;
 import Interfaz.Handlers.InicioJuego;
 import Interfaz.Vistas.Helpers.ObtensorImagenes;
@@ -10,7 +11,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
+import java.util.Observable;
+import java.util.Observer;
 
 public class VistaInicio {
 

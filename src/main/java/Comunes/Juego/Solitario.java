@@ -7,8 +7,9 @@ import Movimientos.*;
 import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Observable;
 
-public abstract class Solitario implements Serializable {
+public abstract class Solitario extends Observable implements Serializable {
 
     public List<Pilon> tableau;
     public Pilon mazo;

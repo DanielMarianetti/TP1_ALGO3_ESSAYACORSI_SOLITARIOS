@@ -36,7 +36,7 @@ public class VistaFoundation extends VistaPilon {
         }
 
         StackPane pane = new StackPane();
-        pane.setOnMouseClicked(mouseEvent -> s.handleClickFoundation(numeroFoundation, 0));
+        pane.setOnMouseClicked(mouseEvent -> s.handleClickFoundation(numeroFoundation, 0, pane));
         container.getChildren().add(pane);
 
     }

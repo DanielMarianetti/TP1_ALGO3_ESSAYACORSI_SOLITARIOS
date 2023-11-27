@@ -2,6 +2,9 @@ package Interfaz.Handlers;
 
 import Comunes.Juego.Solitario;
 import Interfaz.Vistas.VistasPrincipales.VistaPrincipal;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +14,7 @@ public class SeleccionControlador {
     private List<Integer> movimiento;
     Solitario juego;
     VistaPrincipal vista;
+    private Pane tempClickeado;
 
     public SeleccionControlador(Solitario juego, VistaPrincipal vista) {
         this.movimiento = new ArrayList<>();
@@ -18,10 +22,11 @@ public class SeleccionControlador {
         this.vista = vista;
     }
 
-    public void handleClickPilon(int col, int alt) {
+    public void handleClickPilon(int col, int alt, Pane panel) {
+        setBaseMovimientoGUI(panel);
+
         this.movimiento.add(col);
         this.movimiento.add(alt);
-
 
         switch (movimiento.size()) {
             case 4:
@@ -41,7 +46,9 @@ public class SeleccionControlador {
         }
     }
 
-    public void handleClickFoundation(int col, int alt) {
+    public void handleClickFoundation(int col, int alt, Pane panel) {
+        setBaseMovimientoGUI(panel);
+
         this.movimiento.add(col);
         this.movimiento.add(alt);
         this.movimiento.add(10);
@@ -59,7 +66,9 @@ public class SeleccionControlador {
 
     }
 
-    public void handleClickWaste() {
+    public void handleClickWaste(Pane panel) {
+        setBaseMovimientoGUI(panel);
+
         if (movimiento.size() > 1) {
             movimiento = new ArrayList<>();
         }
@@ -70,5 +79,16 @@ public class SeleccionControlador {
         this.movimiento = new ArrayList<>();
         vista.update();
     }
+
+    private void setBaseMovimientoGUI(Pane panel){
+        if(movimiento.isEmpty()){
+            tempClickeado = panel;
+            tempClickeado.setStyle("-fx-border-color: white; -fx-border-width: 3; -fx-border-style: solid;");
+            tempClickeado.setEffect(new DropShadow(10, Color.WHITE));
+        } else {
+            tempClickeado = null;
+        }
+    }
+
 
 }

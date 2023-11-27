@@ -13,13 +13,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
+import java.util.Observer;
+
 public class VistaInicioJuego {
 
     private final StackPane lienzo;
 
-    public VistaInicioJuego(StackPane lienzo) {
-        this.lienzo = lienzo;
-    }
+    public VistaInicioJuego(StackPane lienzo) {this.lienzo = lienzo; }
 
     public void SetVistaInicial() {
 

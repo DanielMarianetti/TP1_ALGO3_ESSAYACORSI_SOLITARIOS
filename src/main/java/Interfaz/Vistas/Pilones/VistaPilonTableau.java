@@ -42,7 +42,7 @@ public class VistaPilonTableau extends VistaPilon {
                     "-fx-border-style: solid;"
             );
 
-            pane.setOnMouseClicked(event -> s.handleClickPilon(numeroPilon, 0));
+            pane.setOnMouseClicked(event -> s.handleClickPilon(numeroPilon, 0, pane));
 
             container.getChildren().add(pane);
         }
@@ -55,7 +55,7 @@ public class VistaPilonTableau extends VistaPilon {
             pane.prefHeightProperty().bind(imagen.fitHeightProperty());
 
             final int alt = i;
-            pane.setOnMouseClicked(event -> s.handleClickPilon(numeroPilon, alt));
+            pane.setOnMouseClicked(event -> s.handleClickPilon(numeroPilon, alt, pane));
 
             container.getChildren().add(pane);
         }

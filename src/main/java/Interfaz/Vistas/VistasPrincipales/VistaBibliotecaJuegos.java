@@ -3,14 +3,16 @@ package Interfaz.Vistas.VistasPrincipales;
 import Interfaz.Vistas.Helpers.BibliotecaJuegos;
 import javafx.geometry.Pos;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-public class VistaBibliotecaJuegos implements VistaPrincipal {
+import java.util.Observable;
+import java.util.Observer;
 
-    private final Pane lienzo;
+public class VistaBibliotecaJuegos extends VistaPrincipal {
 
     public VistaBibliotecaJuegos(Pane lienzo) {
-        this.lienzo = lienzo;
+        super(lienzo);
     }
 
     @Override
