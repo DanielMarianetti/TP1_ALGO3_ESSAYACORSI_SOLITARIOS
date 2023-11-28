@@ -38,7 +38,7 @@ public class VistaInicioJuego {
             // Show the alert and wait for the user's response
             alert.showAndWait().ifPresent(buttonType -> {
                 if (buttonType == botonCargar) {
-                    setVista(SolitarioPersistidor.getInstance().loadState("asda"));
+                    setVista(SolitarioPersistidor.getInstance().loadState());
                     //juego.set(SolitarioPersistidor.getInstance().loadState("asda"));
                 } else {
                     setVista(null);

@@ -23,9 +23,8 @@ public class SolitarioPersistidor implements Persistidor {
         this.juego = juego;
     }
 
-    //TODO cambiar esto porque no usamos los parámetro
     @Override
-    public void saveState(Solitario solitario, String path) {
+    public void saveState() {
         try {
             if(juego != null) {
                 String directoryPath = "partidas";
@@ -53,9 +52,8 @@ public class SolitarioPersistidor implements Persistidor {
 
     }
 
-    //TODO sacar parametro
     @Override
-    public Solitario loadState(String path) {
+    public Solitario loadState() {
         String fullPath = "partidas" + File.separator + nombreGuardado;
         try (FileInputStream fi = new FileInputStream(fullPath)) {
             return Solitario.deserializar(fi);

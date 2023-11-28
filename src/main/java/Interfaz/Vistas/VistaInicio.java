@@ -41,7 +41,7 @@ public class VistaInicio {
                 // Show the alert and wait for the user's response
                 alert.showAndWait().ifPresent(buttonType -> {
                     if (buttonType == botonGuardar) {
-                        SolitarioPersistidor.getInstance().saveState(new Klondike(), "guardar");
+                        SolitarioPersistidor.getInstance().saveState();
                     }
                     stage.close();
                 });

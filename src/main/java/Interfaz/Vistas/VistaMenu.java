@@ -39,7 +39,7 @@ public class VistaMenu {
 
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.isPresent() && result.get() == seleccionGuardar) {
-                    SolitarioPersistidor.getInstance().saveState(new Klondike(), "asd");
+                    SolitarioPersistidor.getInstance().saveState();
                     vistaInicio.SetVistaInicial();
                 } else if(result.isPresent() && result.get() == seleccionNoGuardar) {
                     //Comentar esta linea que sigue si se desea que no se elimine el guardado en su totalidad

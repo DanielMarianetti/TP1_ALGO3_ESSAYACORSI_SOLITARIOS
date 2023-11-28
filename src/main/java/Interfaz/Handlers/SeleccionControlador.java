@@ -38,7 +38,6 @@ public class SeleccionControlador {
                 actualizar();
                 break;
             case 5:
-                System.out.println("Muevo de foundation a Pilon");
                 juego.moverFoundationAPilon(movimiento.get(0),movimiento.get(1),movimiento.get(3));
                 actualizar();
                 break;

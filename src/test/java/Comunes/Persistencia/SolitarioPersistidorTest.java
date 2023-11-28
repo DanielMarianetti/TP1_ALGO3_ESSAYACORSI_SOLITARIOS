@@ -11,15 +11,16 @@ import java.util.List;
 
 public class SolitarioPersistidorTest extends TestCase {
 
+    private final String pathGuardado = "partidas" + File.separator + "save";
     public void testSaveState() {
         Solitario solitario = new Klondike();
         solitario.iniciarRandom();
 
         SolitarioPersistidor persistidor = new SolitarioPersistidor();
 
-        String fileName = "fileNameGuardado";
-        persistidor.saveState(solitario, fileName);
-        File file = new File("partidas" + File.separator + fileName);
+        persistidor.setJuego(solitario);
+        persistidor.saveState();
+        File file = new File(pathGuardado);
         boolean fileDeleted = file.delete();
         assert fileDeleted;
     }
@@ -30,12 +31,10 @@ public class SolitarioPersistidorTest extends TestCase {
 
         SolitarioPersistidor persistidor = new SolitarioPersistidor();
 
-        String fileName = "fileNameGuardado";
-        String pathGuardado = "partidas" + File.separator + fileName;
+        persistidor.setJuego(solitario);
+        persistidor.saveState();
 
-        persistidor.saveState(solitario, fileName);
-
-        Solitario persistido = persistidor.loadState(fileName);
+        Solitario persistido = persistidor.loadState();
         assertNotNull(persistido);
 
         File file = new File(pathGuardado);
@@ -43,12 +42,6 @@ public class SolitarioPersistidorTest extends TestCase {
         assertTrue(fileDeleted);
     }
 
-    public void testAbrirArchivoQueNoExisteArrojaExcepcion() {
-        SolitarioPersistidor persistidor = new SolitarioPersistidor();
-
-        persistidor.loadState("cualquiera");
-        fail("No debe abrir un archivo que no existe");
-    }
     public void testSiNoExisteElDirectorioDeGuardadoIgualSeCrea() {
         SolitarioPersistidor persistidor = new SolitarioPersistidor();
         Klondike solitario = new Klondike();
@@ -59,9 +52,9 @@ public class SolitarioPersistidorTest extends TestCase {
         borrarDirectorioRecur(directorio);
         assertFalse(directorio.exists());
 
-        String fileName = "fileNameGuardado";
-        persistidor.saveState(solitario, fileName);
-        File file = new File("partidas" + File.separator + fileName);
+        persistidor.setJuego(solitario);
+        persistidor.saveState();
+        File file = new File(pathGuardado);
         boolean fileDeleted = file.delete();
         assert fileDeleted;
     }
@@ -91,43 +84,31 @@ public class SolitarioPersistidorTest extends TestCase {
         originalSolitario.iniciarRandom();
 
         Persistidor persistidor = new SolitarioPersistidor();
-        String pathGuardado = "partidas" + File.separator + "test";
 
+        persistidor.setJuego(originalSolitario);
+        persistidor.saveState();
 
-        try {
-            persistidor.saveState(originalSolitario, "test");
-        } catch (IOException e){
-            e.printStackTrace();
-            fail("Excepcion no esperada");
+        Klondike solitarioDeserializado = (Klondike) persistidor.loadState();
+        List<Pilon> tableauOriginal = originalSolitario.tableau;
+        List<Pilon> tableauDeserializado = solitarioDeserializado.tableau;
+
+        for(int i = 0; i < 7; i++){
+            Pilon pilonOriginal = tableauOriginal.get(i);
+            Pilon pilonDeserializado = tableauDeserializado.get(i);
+
+            assertEquals(pilonOriginal.cantidadCartas(), pilonDeserializado.cantidadCartas());
+            for(int j = 0; j < pilonOriginal.cantidadCartas(); j++){
+                assertTrue(pilonOriginal.getCarta(j).equals(pilonDeserializado.getCarta(j)));
+            }
         }
 
-        try {
-            Klondike solitarioDeserializado = (Klondike) persistidor.loadState("test");
-            List<Pilon> tableauOriginal = originalSolitario.tableau;
-            List<Pilon> tableauDeserializado = solitarioDeserializado.tableau;
+        Pilon mazoOriginal = originalSolitario.mazo;
+        Pilon mazoDeserializado = solitarioDeserializado.mazo;
 
-            for(int i = 0; i < 7; i++){
-                Pilon pilonOriginal = tableauOriginal.get(i);
-                Pilon pilonDeserializado = tableauDeserializado.get(i);
+        assertEquals(mazoOriginal.cantidadCartas(), mazoDeserializado.cantidadCartas());
 
-                assertEquals(pilonOriginal.cantidadCartas(), pilonDeserializado.cantidadCartas());
-                for(int j = 0; j < pilonOriginal.cantidadCartas(); j++){
-                    assertTrue(pilonOriginal.getCarta(j).equals(pilonDeserializado.getCarta(j)));
-                }
-            }
-
-            Pilon mazoOriginal = originalSolitario.mazo;
-            Pilon mazoDeserializado = solitarioDeserializado.mazo;
-
-            assertEquals(mazoOriginal.cantidadCartas(), mazoDeserializado.cantidadCartas());
-
-            for(int j = 0; j < mazoOriginal.cantidadCartas(); j++){
-                assertTrue(mazoOriginal.getCarta(j).equals(mazoDeserializado.getCarta(j)));
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            fail("Excepcion no esperada");
+        for(int j = 0; j < mazoOriginal.cantidadCartas(); j++){
+            assertTrue(mazoOriginal.getCarta(j).equals(mazoDeserializado.getCarta(j)));
         }
 
         File file = new File(pathGuardado);

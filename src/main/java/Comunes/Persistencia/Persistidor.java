@@ -6,6 +6,7 @@ import java.io.IOException;
 
 public interface Persistidor {
 
-    void saveState(Solitario solitario, String filePath) throws IOException;
-    Solitario loadState(String filePath) throws IOException;
+    void setJuego(Solitario juego);
+    void saveState();
+    Solitario loadState() ;
 }
